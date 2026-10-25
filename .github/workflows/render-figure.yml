@@ -1,0 +1,59 @@
+name: Render verified Figure 1 preview
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/render-figure.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: figure-preview
+  cancel-in-progress: false
+
+jobs:
+  render-and-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Check source figure integrity
+        run: |
+          echo "51bf8d940db4cbf4adaaca5102c9bc94e8a7418c272f4b9d084d8cf43a37c7f3  figures/rq1_figure.pdf" | sha256sum -c -
+      - name: Install verified render tooling
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq poppler-utils
+          python3 -m pip install --user "Pillow==11.3.0"
+      - name: Render PDF page 1 without altering content
+        run: |
+          pdftoppm -f 1 -singlefile -r 160 -png figures/rq1_figure.pdf figures/rq1_figure
+          python3 - <<'PY'
+          from pathlib import Path
+          from PIL import Image
+          png=Path("figures/rq1_figure.png")
+          webp=Path("figures/rq1_figure.webp")
+          with Image.open(png) as im:
+              assert im.format == "PNG"
+              assert im.width > 800 and im.height > 900
+              im.save(webp, "WEBP", lossless=True, method=6)
+          with Image.open(webp) as out:
+              out.verify()
+          print("Rendered verified frozen Figure 1 to PNG and lossless WebP")
+          PY
+      - name: Commit generated image assets
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add figures/rq1_figure.png figures/rq1_figure.webp
+          if git diff --cached --quiet; then
+            echo "Preview images unchanged"
+            exit 0
+          fi
+          git commit -m "Add original Figure 1 raster previews from frozen PDF"
+          git push origin HEAD:main
