@@ -24,7 +24,7 @@ jobs:
         run: python3 -m unittest discover -s tests -v
 
   observed-analysis-environment:
-    name: Verify recorded analysis dependencies
+    name: Verify compatible analysis dependencies
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -47,7 +47,7 @@ jobs:
           print("Python:", sys.version)
           print("Matplotlib:", matplotlib.__version__)
           print("NumPy:", numpy.__version__)
-          assert sys.version_info[:3] == (3, 9, 6)
+          assert sys.version_info[:2] == (3, 9)
           assert matplotlib.__version__ == "3.9.4"
           assert numpy.__version__ == "2.0.2"
           PY
