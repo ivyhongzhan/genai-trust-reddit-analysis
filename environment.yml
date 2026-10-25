@@ -1,7 +1,9 @@
+# Direct versions observed in the successful local A02 figure reproduction.
+# This is not a complete transitive lockfile for the entire source project.
 name: genai-trust-reddit-analysis
 channels:
   - conda-forge
-  - defaults
 dependencies:
-  - python>=3.10
-  - matplotlib
+  - python=3.9.6
+  - numpy=2.0.2
+  - matplotlib=3.9.4
