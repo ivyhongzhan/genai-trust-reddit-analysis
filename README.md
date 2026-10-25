@@ -1,44 +1,62 @@
-# GenAI Trust in Technical Reddit Communities — Research Artifacts
+# Beyond the Aggregate: Research Artifacts
 
-This repository contains reproducibility artifacts for Hong Zhan's secondary analysis, *Beyond the Aggregate: Trust and Distrust in Generative AI Across Technical Reddit Communities and Time*. The paper was submitted to PACM HCI / CSCW Rolling Quantitative; acceptance has not been confirmed.
+**Beyond the Aggregate: Trust and Distrust in Generative AI Across Technical Reddit Communities and Time**  
+Hong Zhan · Independent research · 2026  
+Manuscript submitted to PACM HCI (CSCW Rolling Quantitative). Not accepted or published.
 
-## Study
+## Research overview
 
-The analysis describes released trust/distrust classifications and dimensions in five prespecified Reddit communities: `ChatGPTCoding`, `webdev`, `programming`, `GitHub`, and `compsci`. Classification and dimensions are analyzed as separate archives with archive-specific denominators. The analysis uses community and UTC half-year descriptions; it does not make causal, population-prevalence, individual-attitude, or author-occupation claims.
+This descriptive secondary analysis examines released generative AI trust and distrust discourse across five technical Reddit communities: `ChatGPTCoding`, `webdev`, `programming`, `GitHub`, and `compsci`. It compares pooled, community, and UTC half year descriptions while preserving each archive's measurement and denominator boundaries.
 
-The dimension analysis uses the documented uniform-field replacement estimand `Output_gpt-4.1-2025-04-14_few` with the exact 13-dimension vocabulary and exception rules. This transparent replacement protocol does not reconstruct or validate the original study's mixed, dimension-specific field map. See [`provenance/d013_activation_record.md`](provenance/d013_activation_record.md).
+The classification archive contains 8,520 source records and 8,519 valid classification labels. Of the valid labels, `Neither` accounts for 3,555 (41.7%) and `Trust` for 3,408 (40.0%). `Trust` is the most frequent label within ChatGPTCoding (43.1%) and programming (46.2%). The separate dimensions archive contains 4,964 records, with `Competence` recorded in 3,506 (70.6%). These are descriptions of released computational labels, not measurements of individual attitudes, population prevalence, use behavior, or causality.
 
-## Current verification status
+The dimension analysis uses a documented uniform field replacement estimand, `Output_gpt-4.1-2025-04-14_few`, with explicit exception and availability rules. It does not reconstruct or validate the source study's dimension specific field mapping. See [the decision record](provenance/d013_activation_record.md).
 
-Existing frozen outputs and manifests report PASS for the RQ1/RQ2 freezes and the Day 28 results inventory. The reported pooled values include classification source N=8,520, canonical-label N=8,519, `Neither` 3,555/8,519 (41.7%), `Trust` 3,408/8,519 (40.0%), and dimensions `Competence` 3,506/4,964 (70.6%). Community-specific `Trust` is 43.1% in `ChatGPTCoding` and 46.2% in `programming`.
+## Verified evidence and remaining limits
 
-This repository documents that a complete raw-data-to-paper rerun was not established and does **not** claim a complete raw-data-to-paper rerun. The extracted frozen input JSON files were absent from the inspected project tree, and the file named `tacl_data.zip` was an HTML response rather than a ZIP. Several downstream manifests explicitly document reference-only verification or no recalculation. The source-chain and submission identity limits are recorded in [`provenance/source_chain.json`](provenance/source_chain.json).
+Local verification completed on October 25, 2026, against the frozen research project:
 
-## Contents
+| Stage | Finding |
+| --- | --- |
+| Day 14 | Three direct inputs and both frozen analytic JSONL files recovered locally; recorded SHA-256 values match. |
+| Day 15 | RQ1 descriptive statistics reproduced byte for byte from the verified frozen inputs. |
+| Day 16 | Tables and raster figures match. PDF/SVG differ only in export timestamp and generated IDs; normalized content and rendered PDF pixels match, with text and collision audits passing. |
+| Day 17 | Sensitivity outputs match; the historical downstream QC gate remains `BLOCKED` and has not been rewritten. |
+| Day 18 | All analytical outputs reproduced byte for byte; a provenance `run_id` differs as expected. |
+| Day 20 and later | No independent rerun has been established for every downstream artifact. |
+| Submitted PDF | The identity of the exact uploaded PDF is not established; the existing manifest records a hash discrepancy. |
 
-- `scripts/`: preserved Day 15 and Day 18 Python analysis scripts, adjusted only to remove one record ID from public QC output.
-- `results/`: aggregate, community, temporal, and pooled-versus-stratified source tables and reports copied from frozen artifacts.
-- `figures/`: frozen paper-facing figures copied without regeneration.
-- `provenance/`: sanitized freeze records, scientific protocol, source chain, and submission source manifest.
-- `tests/`: deterministic smoke and scientific consistency checks over packaged aggregate artifacts.
+**A complete raw-data-to-paper rerun was not established.** In particular, not every downstream generating script is packaged here, and the confirmed Day 14 inputs reside in the separately preserved local research project rather than this repository. The failed `tacl_data.zip` download was a Zenodo 404 HTML response saved with a ZIP extension; it does not establish loss or corruption of the verified Day 14 data. See [reproduction details](reproduce.md).
 
-No raw Reddit records, row-level analytic JSONL, author fields, usernames, post text, post titles, or record IDs are included. The source project is preserved separately and was not modified.
+## Quick verification
 
-## Verify this package
+This package's built in checks verify frozen file integrity and selected scientific consistency conditions. They are **not** a full analysis rerun.
 
-Requires Python 3.10 or later; the standard-library checks have no third-party dependencies.
+Requires Python 3.10 or later. The package verification uses only the Python standard library.
 
 ```bash
 python3 scripts/verify_package.py
 python3 -m unittest discover -s tests -v
 ```
 
-The copied Day 15 and Day 18 scripts are the authentic execution code preserved in the source project. Full raw-input execution requires the exact frozen inputs and upstream manifests documented in the source project; their absence is a current limitation. Do not substitute or reconstruct inputs.
+The private source project was separately tested with Python 3.9.6, Matplotlib 3.9.4, and NumPy 2.0.2. The environment specification here is not yet a fully validated lockfile for the entire source project.
 
-## Reproduce the manuscript build
+## Repository contents
 
-The candidate anonymous LaTeX source ZIP is documented in the source project. The exact uploaded PDF could not be established: the bundle SHA manifest records a different hash from the current local build, so no PDF is included here. See [`provenance/submission-source-manifest.sha256`](provenance/submission-source-manifest.sha256) and [`provenance/source_chain.json`](provenance/source_chain.json).
+| Path | Purpose |
+| --- | --- |
+| `scripts/` | Preserved Day 15 and Day 18 analysis code, plus package verifier |
+| `results/` | Frozen aggregate and stratified analysis tables |
+| `figures/` | Frozen figures; not automatically regenerated by this package |
+| `provenance/` | Freeze records, decisions, hashes, and source chain |
+| `tests/` | Deterministic package checks |
+| `data/README.md` | Upstream data and local input provenance |
+| `reproduce.md` | Verification commands, prerequisites, and remaining gaps |
 
-## License
+No Reddit post bodies, titles, author fields, record IDs, row level records, or correspondence are redistributed.
 
-No license is declared. Rights and licensing conditions for the underlying dataset and derived materials have not been established for redistribution in this repository.
+## Data, rights, and citation
+
+Original released data: [Zenodo record 20331918](https://doi.org/10.5281/zenodo.20331918). This is a **dataset**, not the manuscript preprint. An SSRN preprint URL has not yet been established and is therefore not linked.
+
+The repository does not grant a blanket software or dataset license. See [LICENSE](LICENSE). Citation metadata are provided in [CITATION.cff](CITATION.cff). The repository remains private while release permissions and peer review requirements are reviewed.
