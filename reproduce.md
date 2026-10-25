@@ -1,20 +1,39 @@
 # Reproduction and verification
 
-## What is verified here
+## Reproduce the packaged artifact checks
 
-The package verification script checks its file hashes, presence of frozen aggregate tables and figures, expected headline counts/proportions, separate archive denominators, and temporal comparison boundaries. It does not rerun the research analysis from raw inputs.
+Run these commands from the repository root:
 
 ```bash
 python3 scripts/verify_package.py
 python3 -m unittest discover -s tests -v
 ```
 
-## Full raw-input rerun status
+The verifier checks 12 frozen file hashes, selected numerator and denominator values, community percentages, temporal coverage, and the presence of an accurate disclosure of reproduction limits. This operation verifies packaged outputs; it does **not** execute the source study from its raw inputs.
 
-The original project records raw-input SHA-256 values and Day 14 frozen-input SHA-256 values in the version record. The extracted JSONL inputs referenced by that freeze were absent from the inspected project checkout. The available `data/raw/tacl_data.zip` is an HTML response, not a usable archive. Therefore the preserved scripts cannot be run end-to-end from the artifacts available in this package.
+## Confirmed local rerun, October 25, 2026
 
-The original project does preserve the Day 15 count script and Day 18 community script. Other downstream outputs include frozen data and manifests, but not all generating scripts; the Day 20 preserved script references a temporary source path in its QA workflow, and Days 22–27 were documented as frozen-value projections or evidence inventories. No missing computation is represented as reproduced here.
+Separate audits in the preserved local research project established the following:
 
-## Input recovery needed for full rerun
+| Source stage | Reproduction status |
+| --- | --- |
+| Day 14 | Three direct frozen inputs and two analytic JSONL files present with matching SHA-256 |
+| Day 15 | All four output files match exactly |
+| Day 16 | All numerical tables and raster figures match; PDF/SVG normalized content and rendered pixels are identical, despite nondeterministic timestamp and SVG IDs |
+| Day 17 | All seven output hashes match, but historical QC remains `BLOCKED` |
+| Day 18 | Seven of eight output files match exactly; the only difference is a run specific provenance `run_id` |
+| Day 20 | Not rerun because the original script writes to an occupied frozen output directory |
 
-Recover the exact released archives from the cited Zenodo record and independently verify their SHA-256 values against the source project's freeze record before using them. Restore the extracted Day 14 files from their authoritative source only if their hashes match the recorded values. Then use the preserved scripts with their recorded inputs and outputs, in a clean copy, following the frozen decisions and archive-specific denominators. Do not join the archives or alter fields, exclusions, parser behavior, or temporal boundaries.
+The Day 16 audit found no scientific difference. Original frozen materials were not overwritten. A complete raw-data-to-paper rerun was not established.
+
+## Data availability and boundaries
+
+The three direct Day 14 inputs and two frozen analytical JSONL inputs have been verified **in the local source project**, but they are not included in this GitHub repository. The original `tacl_data.zip` file in that project was an HTML 404 response, not the authoritative frozen data. See [data availability](data/README.md).
+
+The preserved Day 15 and Day 18 scripts require verified frozen JSONL files and freeze records at user supplied paths. Do not substitute unrelated extracts or introduce the later author supplied Mixtral data into this frozen analysis.
+
+Several subsequent output manifests document projected or reference only checks, not a newly executed analysis. Missing generating code or input files must remain marked unverified rather than inferred from the existing outputs.
+
+## Submitted manuscript identity
+
+The source package records a SHA-256 for a candidate submission PDF, but the exact ScholarOne uploaded file has not been independently established. This repository does not claim that its candidate PDF is the submitted file, and does not include a manuscript PDF.
