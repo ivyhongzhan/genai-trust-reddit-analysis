@@ -1,9 +1,11 @@
-# Direct versions observed in the successful local A02 figure reproduction.
-# This is not a complete transitive lockfile for the entire source project.
+# Versions observed in A02: Python 3.9.6, NumPy 2.0.2, Matplotlib 3.9.4.
+# On current Linux runners, Python 3.9.6 is no longer resolvable.
+# The 3.9 minor series is pinned for portability; this is not a full lockfile.
+# matplotlib-base avoids GUI/Qt dependencies for headless verification.
 name: genai-trust-reddit-analysis
 channels:
   - conda-forge
 dependencies:
-  - python=3.9.6
+  - python=3.9
   - numpy=2.0.2
-  - matplotlib=3.9.4
+  - matplotlib-base=3.9.4
