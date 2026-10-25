@@ -1,0 +1,39 @@
+{
+  "freeze_id": "20260926_rq1_freeze_v1",
+  "scope": "Final RQ1 artifact freeze by verified reference only; no calculations rerun.",
+  "status": "PASS",
+  "frozen_artifact_set": {
+    "day15_counts_and_prevalence": {
+      "path": "outputs/day15_day17_rq1_batch/20260925_rq1_batch_v1/day15/rq1_counts_prevalence_source.csv",
+      "sha256": "3d9f410c10ecc4fe401fb2ca2bfae9d35f6280aeb07ab90d1a869398976fd5ff"
+    },
+    "day15_denominator_ledger": {
+      "path": "outputs/day15_day17_rq1_batch/20260925_rq1_batch_v1/day15/rq1_denominator_ledger.csv",
+      "sha256": "8d32cc46f805ee9f83e716e0d9dc78e050c586130f6b4c42c5a020a5d63136e4"
+    },
+    "day16_table": {
+      "path": "outputs/day16_rq1_display/20260926_day16_rq1_display_v2/rq1_table.md",
+      "sha256": "8c8d1ce99bc23ddb20aab43f107d32d820668951470105cc9b53ac0dd53c8504"
+    },
+    "day16_figure_pdf": {
+      "path": "outputs/day16_rq1_display/20260926_day16_rq1_display_v2/rq1_figure.pdf",
+      "sha256": "51bf8d940db4cbf4adaaca5102c9bc94e8a7418c272f4b9d084d8cf43a37c7f3"
+    },
+    "day16_figure_svg": {
+      "path": "outputs/day16_rq1_display/20260926_day16_rq1_display_v2/rq1_figure.svg",
+      "sha256": "953e2b9eee691f834f520c7686a9a455855c8c3697f2cdeb111ae76eef223318"
+    },
+    "day17_denominator_sensitivity": {
+      "path": "outputs/day17_rq1/20260926_day17_rq1_v1/denominator_sensitivity.csv",
+      "sha256": "eaf6435b9c3b0972cc3a7c474ee8b5b55e85b9ee3364fb95d6b7fff2eaad28b1"
+    },
+    "day17_reliability_disposition": {
+      "path": "outputs/day17_rq1/20260926_day17_rq1_v1/reliability_sensitivity_status.md",
+      "sha256": "a7ed561b39853d5edffb3ca3104e3af8dc60114db0925276514aa25100117f62",
+      "status": "COMPLETE_UNAVAILABLE"
+    }
+  },
+  "inherited_locks": ["D-013", "D-017", "D-019", "D-020", "D-021"],
+  "inference_boundary": "Archive-separated finite-archive descriptions only; no cross-archive join, model, or inferential claim.",
+  "not_executed": ["Day 15 recalculation", "Day 16 recalculation", "Day 17 recalculation", "Day 18 or later work"]
+}

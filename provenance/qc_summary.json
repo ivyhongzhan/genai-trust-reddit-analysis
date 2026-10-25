@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "scope": "RQ2 output freeze verification by reference only.",
+  "checks": {
+    "day19_status_pass": true,
+    "day19_all_recorded_checks_pass": true,
+    "day19_manifest_output_hashes_match": true,
+    "day20_status_pass": true,
+    "day20_all_recorded_checks_pass": true,
+    "day20_manifest_output_hashes_match": true,
+    "all_frozen_references_exist": true,
+    "archives_remain_separate": true,
+    "no_cross_archive_join": true,
+    "no_methodology_modification": true,
+    "no_prior_analysis_rerun": true,
+    "no_new_computation": true,
+    "no_day22_work": true
+  },
+  "prerequisite_disposition": "PASS: Day 19 and Day 20 source packages, QC records, manifests, and frozen output hashes all verified.",
+  "frozen_reference_counts": {
+    "day19_outputs": 2,
+    "day20_outputs_and_qa": 19
+  },
+  "inherited_locks": [
+    "D-013",
+    "D-017",
+    "D-018",
+    "D-019"
+  ]
+}

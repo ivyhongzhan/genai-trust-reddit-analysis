@@ -1,0 +1,38 @@
+{
+  "run_id": "20260927_rq2_freeze_v1",
+  "scope": "Final RQ2 freeze only; verified references, no recomputation or methodology change.",
+  "status": "PASS",
+  "prerequisites": {
+    "day19": {
+      "status": "PASS",
+      "manifest_path": "outputs/day19_rq2_community/20260926_day19_rq2_community_v1/run_manifest.json",
+      "manifest_sha256": "9626cec906745c0ca32e7fd4d274fcab0aaf6845cd984fc1b3a152bb0df29c64",
+      "qc_path": "outputs/day19_rq2_community/20260926_day19_rq2_community_v1/qc_summary.json",
+      "qc_sha256": "6a28bff32f942475db23d1323e7586df60a9b30d2a7408c55a8e74feb5b9a44a"
+    },
+    "day20": {
+      "status": "PASS",
+      "manifest_path": "outputs/day20_rq2_temporal/20260926_day20_rq2_temporal_v1/run_manifest.json",
+      "manifest_sha256": "84c77f88379f9953e0708eb20f15bafe66b00685fa67b936119c98978002e722",
+      "qc_path": "outputs/day20_rq2_temporal/20260926_day20_rq2_temporal_v1/qc_summary.json",
+      "qc_sha256": "bbd64c9eb6c16bd5fcf9d8da5434b47374e498fb963faddb6db682f372870663"
+    }
+  },
+  "frozen_artifact_record": "rq2_freeze_record.json",
+  "version_record": "rq2_output_version_record.json",
+  "qc_summary": "qc_summary.json",
+  "locked_rules": [
+    "D-013",
+    "D-017",
+    "D-018",
+    "D-019"
+  ],
+  "archive_relationship": "separate; no row-level join, pooled denominator, or cross-archive calculation",
+  "not_executed": [
+    "Day 19 recalculation",
+    "Day 20 recalculation",
+    "new computation",
+    "methodology modification",
+    "Day 22 work"
+  ]
+}

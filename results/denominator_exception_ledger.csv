@@ -1,0 +1,11 @@
+archive,community,source_n,eligible_denominator_n,missing_or_exception_n,denominator_type,rule,exception_ids,exception_status,exception_treatment,multi_label
+classification,ChatGPTCoding,5333,5332,1,canonical_label_available,D-017,[REDACTED_RECORD_ID],missing,"retained in source accounting; excluded from category-share denominator; not recoded",false
+dimensions,ChatGPTCoding,3321,3321,0,primary_field_clean,D-013,,none,"all primary-field rows parser-clean; no unknown output recoded as absence",true
+classification,webdev,2011,2011,0,canonical_label_available,D-017,,none,"no exception",false
+dimensions,webdev,997,997,0,primary_field_clean,D-013,,none,"all primary-field rows parser-clean; no unknown output recoded as absence",true
+classification,programming,513,513,0,canonical_label_available,D-017,,none,"no exception",false
+dimensions,programming,314,314,0,primary_field_clean,D-013,,none,"all primary-field rows parser-clean; no unknown output recoded as absence",true
+classification,GitHub,378,378,0,canonical_label_available,D-017,,none,"no exception",false
+dimensions,GitHub,198,198,0,primary_field_clean,D-013,,none,"all primary-field rows parser-clean; no unknown output recoded as absence",true
+classification,compsci,285,285,0,canonical_label_available,D-017,,none,"no exception",false
+dimensions,compsci,134,134,0,primary_field_clean,D-013,,none,"all primary-field rows parser-clean; no unknown output recoded as absence",true

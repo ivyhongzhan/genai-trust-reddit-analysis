@@ -1,0 +1,43 @@
+{
+  "artifacts": {
+    "analysis_plan_v2.md": "5987c4a63a0b1abb34baf419c18fa7dd64731196b761267899afec86162c3ba4",
+    "classification_analytic_frozen.jsonl": "890ace6d2bdc36961bbc5e24bc1342a4f98a8e9c21cd1a1ac730276cac9de31d",
+    "deviation_log.md": "347053a4d8fbe5a412da9f2e0ee7d2f709506921d13b9ce8b45fcd8a9827e118",
+    "dimensions_analytic_frozen.jsonl": "e898e3468f76ecae112181c1065c67d64a101a5e9048493f001e3bb16c51fead",
+    "table1_analytic_sample_summary.md": "2e6215ff59489025840a1df18545a4fc6203a9469828cbe4abedbb7b8b0e01c0",
+    "table1_analytic_sample_summary_source.csv": "4106c16913825fe4fbf6c2897a2a9c00fbdd1d2b3c2f65d6ee5fa598a1691055"
+  },
+  "decisions": [
+    "D-013",
+    "D-017",
+    "D-018"
+  ],
+  "excluded_from_freeze": [
+    "cross-archive join",
+    "uncertainty display",
+    "model",
+    "figure",
+    "RQ interpretation"
+  ],
+  "freeze_id": "20260925_day14_archive_separated_freeze_v1",
+  "inputs": {
+    "classification_raw": {
+      "frozen_rows": 8520,
+      "path": "developer-ai-trust/data/raw/extracted/Trust_Classification_json/Trust_Classification_json/data_task1.json",
+      "sha256": "a788f72a49fb6205d9fd06cd32e8c3397dbd1c597556b62af329d3ef2b808336",
+      "source_rows": 230575
+    },
+    "day11_primary_encoding": {
+      "path": "outputs/day11_label_denominator_lock/20260925_day11_encoding_qc_v2/primary_dimension_encoding.jsonl",
+      "rows": 4964,
+      "sha256": "c925dca68848611f6efcea2e515de8c1a218ebe06b6c556656a8eea6cb227192"
+    },
+    "dimensions_raw": {
+      "frozen_rows": 4964,
+      "path": "developer-ai-trust/data/raw/extracted/Dimensions_of_Trust_json/Dimensions_of_Trust_json/data_task2.json",
+      "sha256": "e921bb5a9de38fd5e8ee6e49e9c78208307b720b03c70515d5296a9fe8d85456",
+      "source_rows": 135061
+    }
+  },
+  "scope": "Archive-separated descriptive analytic freeze; no join, model, interval, figure, or RQ interpretation."
+}

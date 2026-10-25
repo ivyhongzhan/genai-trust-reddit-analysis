@@ -1,0 +1,13 @@
+archive,scope,source_or_eligible_n,outcome_available_n,missing_or_exception_n,denominator_rule
+classification,ALL,8520,8519,1,D-017: category shares use canonical-label-available N; source/funnel N retained separately.
+dimensions,ALL,4964,4964,0,D-013 primary field; all frozen rows have clean 13-token encodings.
+classification,ChatGPTCoding,5333,5332,1,D-017: category shares use canonical-label-available N; source/funnel N retained separately.
+dimensions,ChatGPTCoding,3321,3321,0,D-013 primary field; all frozen rows have clean 13-token encodings.
+classification,webdev,2011,2011,0,D-017: category shares use canonical-label-available N; source/funnel N retained separately.
+dimensions,webdev,997,997,0,D-013 primary field; all frozen rows have clean 13-token encodings.
+classification,programming,513,513,0,D-017: category shares use canonical-label-available N; source/funnel N retained separately.
+dimensions,programming,314,314,0,D-013 primary field; all frozen rows have clean 13-token encodings.
+classification,GitHub,378,378,0,D-017: category shares use canonical-label-available N; source/funnel N retained separately.
+dimensions,GitHub,198,198,0,D-013 primary field; all frozen rows have clean 13-token encodings.
+classification,compsci,285,285,0,D-017: category shares use canonical-label-available N; source/funnel N retained separately.
+dimensions,compsci,134,134,0,D-013 primary field; all frozen rows have clean 13-token encodings.

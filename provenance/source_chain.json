@@ -1,0 +1,33 @@
+{
+  "project": "Beyond the Aggregate: Trust and Distrust in Generative AI Across Technical Reddit Communities and Time",
+  "author": "Hong Zhan",
+  "status": "Submitted to PACM HCI / CSCW Rolling Quantitative; acceptance not confirmed",
+  "study_scope": "Descriptive archive-separated analysis in five prespecified technical Reddit communities",
+  "authority_files_reviewed": [
+    "MASTER_CONTEXT.md",
+    "MASTER_OUTLINE.md",
+    "analysis_plan_v2.md",
+    "DECISIONS.md (D-013, D-017 through D-022)",
+    "AGENTS.md"
+  ],
+  "replacement_estimand": {
+    "classification": "LLM_Predictions exact canonical released labels; source N=8520, label-available N=8519",
+    "dimensions": "Output_gpt-4.1-2025-04-14_few, exact 13-token parser; five-community N=4964",
+    "boundary": "Transparent uniform-field replacement estimand; not a reconstruction or validation of the original mixed-field estimand"
+  },
+  "evidence_scope": "Existing frozen output tables, figures, freeze records, and manifests; no raw-level end-to-end rerun was possible in the inspected checkout.",
+  "reproducibility_limitations": [
+    "The extracted classification and dimensions JSON files referenced by the Day 14 version record were absent from the project tree.",
+    "data/raw/tacl_data.zip is an HTML response, not a usable ZIP archive.",
+    "Several later output manifests record references to prior freezes but explicitly say analyses were not rerun or calculations were not performed.",
+    "The Day 28 results freeze is a verified inventory by reference, not an end-to-end reproduction run."
+  ],
+  "submission_identity": {
+    "candidate_source_zip": "submission/pacmhci_acmsmall_20260928/cscw_paper1_source_anonymous.zip",
+    "candidate_source_zip_sha256": "9cc6a65588336910244c82e3300f31b6651f7f0c05fdc9e1f480220619f91e5e",
+    "expected_pdf_sha256_from_bundle_manifest": "9d03842d0c1f3288dd1fa5d12175b87f8b7e6b61f145ae56c696e763ea4f6bc0",
+    "current_local_pdf_sha256": "8a5daa047da725c0d249e2fbf1fb6358170a334dfac0fa0e79addddf131b6d1e",
+    "status": "Exact uploaded PDF not established; current local PDF differs from bundle manifest and is excluded."
+  },
+  "privacy": "No raw records, row-level analytic inputs, author fields, usernames, post text, post titles, or record identifiers are included."
+}
