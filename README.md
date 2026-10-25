@@ -4,7 +4,7 @@
 
 Hong Zhan | Research Artifacts | 2026
 
-*Manuscript submitted to PACM HCI (CSCW Rolling Quantitative). Not yet accepted or published.*
+*Manuscript submitted to PACM HCI (CSCW Rolling Quantitative). *
 
 [![Research artifact verification](https://github.com/ivyhongzhan/genai-trust-reddit-analysis/actions/workflows/verify.yml/badge.svg)](https://github.com/ivyhongzhan/genai-trust-reddit-analysis/actions/workflows/verify.yml)
 
