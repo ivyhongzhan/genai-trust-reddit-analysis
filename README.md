@@ -1,62 +1,169 @@
-# Beyond the Aggregate: Research Artifacts
+# Beyond the Aggregate
 
-**Beyond the Aggregate: Trust and Distrust in Generative AI Across Technical Reddit Communities and Time**  
-Hong Zhan · Independent research · 2026  
-Manuscript submitted to PACM HCI (CSCW Rolling Quantitative). Not accepted or published.
+**Trust and Distrust in Generative AI Across Technical Reddit Communities and Time**
 
-## Research overview
+Hong Zhan | Research Artifacts | 2026
 
-This descriptive secondary analysis examines released generative AI trust and distrust discourse across five technical Reddit communities: `ChatGPTCoding`, `webdev`, `programming`, `GitHub`, and `compsci`. It compares pooled, community, and UTC half year descriptions while preserving each archive's measurement and denominator boundaries.
+*Manuscript submitted to PACM HCI (CSCW Rolling Quantitative). Not yet accepted or published.*
 
-The classification archive contains 8,520 source records and 8,519 valid classification labels. Of the valid labels, `Neither` accounts for 3,555 (41.7%) and `Trust` for 3,408 (40.0%). `Trust` is the most frequent label within ChatGPTCoding (43.1%) and programming (46.2%). The separate dimensions archive contains 4,964 records, with `Competence` recorded in 3,506 (70.6%). These are descriptions of released computational labels, not measurements of individual attitudes, population prevalence, use behavior, or causality.
+[![Research artifact verification](https://github.com/ivyhongzhan/genai-trust-reddit-analysis/actions/workflows/verify.yml/badge.svg)](https://github.com/ivyhongzhan/genai-trust-reddit-analysis/actions/workflows/verify.yml)
 
-The dimension analysis uses a documented uniform field replacement estimand, `Output_gpt-4.1-2025-04-14_few`, with explicit exception and availability rules. It does not reconstruct or validate the source study's dimension specific field mapping. See [the decision record](provenance/d013_activation_record.md).
+[Research Figure](figures/rq1_figure.pdf) · [Reproduction Guide](reproduce.md) · [Original Dataset](https://doi.org/10.5281/zenodo.20331918)
 
-## Verified evidence and remaining limits
+## TL;DR
 
-Local verification completed on October 25, 2026, against the frozen research project:
+**Question.** What do pooled statistics leave unresolved about trust and distrust in generative AI across different online communities?
 
-| Stage | Finding |
-| --- | --- |
-| Day 14 | Three direct inputs and both frozen analytic JSONL files recovered locally; recorded SHA-256 values match. |
-| Day 15 | RQ1 descriptive statistics reproduced byte for byte from the verified frozen inputs. |
-| Day 16 | Tables and raster figures match. PDF/SVG differ only in export timestamp and generated IDs; normalized content and rendered PDF pixels match, with text and collision audits passing. |
-| Day 17 | Sensitivity outputs match; the historical downstream QC gate remains `BLOCKED` and has not been rewritten. |
-| Day 18 | All analytical outputs reproduced byte for byte; a provenance `run_id` differs as expected. |
-| Day 20 and later | No independent rerun has been established for every downstream artifact. |
-| Submitted PDF | The identity of the exact uploaded PDF is not established; the existing manifest records a hash discrepancy. |
+**Approach.** I conducted a descriptive secondary analysis of released research data from five technical Reddit communities. Classification and dimension archives were analyzed separately, with community and temporal strata and explicit measurement boundaries.
 
-**A complete raw-data-to-paper rerun was not established.** In particular, not every downstream generating script is packaged here, and the confirmed Day 14 inputs reside in the separately preserved local research project rather than this repository. The failed `tacl_data.zip` download was a Zenodo 404 HTML response saved with a ZIP extension; it does not establish loss or corruption of the verified Day 14 data. See [reproduction details](reproduce.md).
+**Finding.** *Neither* was the most frequent pooled classification (41.7%), whereas *Trust* was the most frequent classification in ChatGPTCoding (43.1%) and programming (46.2%). Pooled and community specific summaries describe different aspects of the same sampled discourse.
 
-## Quick verification
+### Main research figure
 
-This package's built in checks verify frozen file integrity and selected scientific consistency conditions. They are **not** a full analysis rerun.
+![Figure 1. Pooled and community specific trust and distrust classification labels and dimension indicators across five sampled technical Reddit communities.](figures/rq1_figure.png)
 
-Requires Python 3.10 or later. The package verification uses only the Python standard library.
+**Figure 1.** Classification labels and primary field dimensions across five technical Reddit communities. Classification and dimensions come from separate archives with different denominators. [View the original vector figure (PDF)](figures/rq1_figure.pdf) · [Lossless WebP](figures/rq1_figure.webp).
+
+## Quick Start
+
+The following steps verify the **packaged frozen artifacts**. They do not constitute a full raw data to manuscript rerun.
+
+**1. Clone with authorized GitHub access.** This repository is private.
+
+```bash
+git clone https://github.com/ivyhongzhan/genai-trust-reddit-analysis.git
+cd genai-trust-reddit-analysis
+```
+
+**2. Verify frozen outputs.** Requires Python 3.10 or later; the package verifier uses only the standard library.
 
 ```bash
 python3 scripts/verify_package.py
+```
+
+**3. Run the included tests.**
+
+```bash
 python3 -m unittest discover -s tests -v
 ```
 
-The private source project was separately tested with Python 3.9.6, Matplotlib 3.9.4, and NumPy 2.0.2. The environment specification here is not yet a fully validated lockfile for the entire source project.
+The verifier checks 12 frozen file hashes, selected counts and proportions, and temporal reporting boundaries. The [CI workflow](.github/workflows/verify.yml) runs the same checks and separately validates a compatible analysis environment. For source analysis requirements and precise limits, see [Reproduction and Verification](reproduce.md).
 
-## Repository contents
+## Repository Structure
 
-| Path | Purpose |
+```text
+genai-trust-reddit-analysis/
+├── .github/workflows/
+│   ├── verify.yml
+│   └── render-figure.yml
+├── scripts/
+│   ├── run_day15_rq1_counts.py
+│   ├── run_day18_rq2_community.py
+│   └── verify_package.py
+├── results/
+├── figures/
+│   ├── rq1_figure.pdf
+│   ├── rq1_figure.png
+│   └── rq1_figure.webp
+├── provenance/
+├── tests/
+├── data/
+│   └── README.md
+├── environment.yml
+├── reproduce.md
+├── CITATION.cff
+├── LICENSE
+└── README.md
+```
+
+The preserved scripts perform actual analysis of verified frozen inputs. The results and figures are frozen research outputs, not newly generated results from this repository's smoke test. Provenance records document methodological decisions, denominator rules, outputs, and checksums. The raster previews of Figure 1 were rendered from the checksum verified frozen PDF without changing its plotted content.
+
+## Data
+
+This study reuses research data released by Pessianzadeh and colleagues. It examines five technical Reddit communities: `ChatGPTCoding`, `webdev`, `programming`, `GitHub`, and `compsci`.
+
+| Archive | Source records | Records with valid analyzed measures |
+| --- | ---: | ---: |
+| Trust and distrust classification | 8,520 | 8,519 |
+| Trust and distrust dimensions | 4,964 | 4,964 |
+
+The classification archive retains one record without a valid classification label. The dimensions archive contains 13 indicators that can cooccur within a record. The primary temporal window spans 2023 H1 through 2025 H1, with December 2022 retained as partial coverage context only.
+
+The original source dataset is available at [Zenodo record 20331918](https://doi.org/10.5281/zenodo.20331918). This is the **source dataset**, not a preprint of the present study. No public SSRN preprint has been verified yet.
+
+All three direct Day 14 inputs and both frozen analytic files were recovered in the preserved local research project, and their recorded SHA256 digests matched. Record level inputs, Reddit post text, user information, and private correspondence are not redistributed here. See [Data Availability](data/README.md).
+
+## Method
+
+The study uses descriptive reporting of released computational classification labels and dimensions. It does not train a new classifier or perform causal analysis or hypothesis testing.
+
+**Classification.** The released categories `Trust`, `Distrust`, `Both`, and `Neither` are summarized within the classification archive. Reported category shares use the 8,519 available valid labels, while the full 8,520 source records remain accounted for.
+
+**Community and temporal descriptions.** Results are presented across the five communities and UTC half year periods, with sparse or unavailable cells identified according to the frozen protocol.
+
+**Measurement and provenance.** The classification and dimensions archives have independent inclusion flows and denominators. The public source release did not establish the source study's full dimension specific field map. Rather than assert a reconstruction, this study adopted the documented replacement estimand `Output_gpt-4.1-2025-04-14_few`, with a locked 13 indicator vocabulary, parsing and exception rules. This replacement does not externally validate the original mixed field procedure. See [D013 decision record](provenance/d013_activation_record.md).
+
+## Reproduction Evidence
+
+### Reported results and verified frozen outputs
+
+| Measure | Submitted manuscript | Independently checked frozen results |
+| --- | ---: | ---: |
+| Valid classification labels | 8,519 | 8,519 |
+| Pooled Neither | 41.7% | 41.7% |
+| Pooled Trust | 40.0% | 40.0% |
+| ChatGPTCoding Trust | 43.1% | 43.1% |
+| programming Trust | 46.2% | 46.2% |
+| Dimension records | 4,964 | 4,964 |
+| Competence indicator | 70.6% | 70.6% |
+
+### Local reproduction audit, October 25, 2026
+
+| Stage | Verified outcome |
 | --- | --- |
-| `scripts/` | Preserved Day 15 and Day 18 analysis code, plus package verifier |
-| `results/` | Frozen aggregate and stratified analysis tables |
-| `figures/` | Frozen figures; not automatically regenerated by this package |
-| `provenance/` | Freeze records, decisions, hashes, and source chain |
-| `tests/` | Deterministic package checks |
-| `data/README.md` | Upstream data and local input provenance |
-| `reproduce.md` | Verification commands, prerequisites, and remaining gaps |
+| Day 14 | Required direct and analytic frozen inputs recovered; SHA256 checksums matched |
+| Day 15 | Descriptive results reproduced byte for byte |
+| Day 16 | Tables and raster figures matched; PDF and SVG were visually equivalent |
+| Day 17 | Sensitivity outputs reproduced; the original QC gate remains `BLOCKED` |
+| Day 18 | Analytical outputs reproduced exactly; only a run specific provenance ID differed |
+| Day 20 | Not independently rerun |
 
-No Reddit post bodies, titles, author fields, record IDs, row level records, or correspondence are redistributed.
+Day 16 vector differences were limited to export timestamps and generated internal IDs. The frozen and rerun PDFs rendered identically at the tested resolution; text and collision audits passed. No scientific difference was identified.
 
-## Data, rights, and citation
+**A complete raw-data-to-paper rerun was not established.** Although the verified Day 14 frozen inputs were available and major analysis steps were rerun locally, those inputs are not distributed here and not all downstream paper generating steps are independently executable from this package.
 
-Original released data: [Zenodo record 20331918](https://doi.org/10.5281/zenodo.20331918). This is a **dataset**, not the manuscript preprint. An SSRN preprint URL has not yet been established and is therefore not linked.
+The precise commands, inputs, and outstanding issues are explained in [Reproduction and Verification](reproduce.md). GitHub Actions passing means the **package tests and compatible runtime verification** succeeded; it does not imply an end to end manuscript reproduction.
 
-The repository does not grant a blanket software or dataset license. See [LICENSE](LICENSE). Citation metadata are provided in [CITATION.cff](CITATION.cff). The repository remains private while release permissions and peer review requirements are reviewed.
+## Limitations
+
+**Interpretation.** The released labels characterize sampled online discourse records, not verified individual psychological states, user behavior, developer occupations, or population prevalence.
+
+**Measurement.** The dimensions analysis uses a transparent replacement estimand rather than a reconstructed or externally validated source study measurement.
+
+**Temporal coverage.** Some strata contain sparse or unavailable records. The descriptive comparisons do not establish a time trend or a causal mechanism.
+
+**Reproducibility.** The included code and frozen aggregate materials support verification of specific analysis stages, not a complete independent raw data to final manuscript rerun.
+
+**Submission provenance.** The exact journal uploaded PDF has not yet been independently identified from the local candidate build and submission hash records.
+
+**Reuse permissions.** Source data and derived materials have distinct rights and access considerations. The current repository grants no general reuse license pending review of the applicable conditions.
+
+## Citation & Contact
+
+**Submitted manuscript**
+
+Zhan, H. (2026). *Beyond the Aggregate: Trust and Distrust in Generative AI Across Technical Reddit Communities and Time*. Manuscript submitted for peer review.
+
+**Source study and dataset**
+
+Pessianzadeh et al. (2026). *In Generative AI We (Dis)Trust? Computational Analysis of Trust and Distrust in Reddit Discussions*. *Transactions of the Association for Computational Linguistics*.
+
+[Source publication](https://doi.org/10.1162/TACL.a.744) · [Source dataset](https://doi.org/10.5281/zenodo.20331918)
+
+Software citation metadata are in [CITATION.cff](CITATION.cff). An SSRN preprint link will be added only after an actual public preprint is verified.
+
+**Hong Zhan**
+
+[Academic website](https://ivyhongzhan.github.io/Ivyhongzhan/) · [GitHub profile](https://github.com/ivyhongzhan) · [ORCID](https://orcid.org/0009-0002-1862-0913)
+
+Email: [hz2030@alumni.york.ac.uk](mailto:hz2030@alumni.york.ac.uk)
