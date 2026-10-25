@@ -1,10 +1,10 @@
 cff-version: 1.2.0
-message: "If you use these artifacts, cite the submitted manuscript and the original dataset record according to their current metadata."
+message: "If you use these research artifacts, please cite this software and the original dataset as appropriate."
 authors:
   - family-names: Zhan
     given-names: Hong
-title: "Beyond the Aggregate: Trust and Distrust in Generative AI Across Technical Reddit Communities and Time"
+    orcid: "https://orcid.org/0009-0002-1862-0913"
+title: "Beyond the Aggregate: Research Artifacts"
 type: software
-version: "0.1.0"
-date-released: 2026-10-25
-abstract: "Research artifacts for a descriptive, archive-separated secondary analysis of released GenAI trust and distrust data in five technical Reddit communities. The manuscript is submitted to PACM HCI / CSCW Rolling Quantitative; acceptance is not confirmed."
+abstract: "Research artifacts for a descriptive, archive-separated secondary analysis of generative AI trust and distrust discourse across five technical Reddit communities."
+url: "https://github.com/ivyhongzhan/genai-trust-reddit-analysis"
