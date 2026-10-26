@@ -58,6 +58,27 @@ Detailed verification evidence, including the scope of completed and incomplete 
 
 Passing GitHub Actions indicates successful execution of the included verification tests; it does not establish complete end-to-end reproduction.
 
+## Release Archive Integrity
+
+A separate, version-controlled builder prepares a **release candidate** from the public
+research repository without re-running or changing frozen scientific results:
+
+```bash
+python3 scripts/build_zenodo_release.py
+python3 scripts/build_zenodo_release.py --verify genai-trust-reddit-analysis_release-candidate.zip
+```
+
+The candidate includes `ARCHIVE_MANIFEST.json`, which records the GitHub source
+commit and SHA-256 checksum and byte size of every included file. Its embedded
+`CITATION.cff` uses the all-version (concept) DOI until a new version-specific
+DOI is assigned by Zenodo; no publication date or version DOI is invented.
+Only the documented repository files are packaged, including explicit file-level
+license declarations; raw Reddit records are not included in this distribution.
+
+Archive-wide integrity verification is **not** equivalent to independent
+reproduction of the research from record-level source data. The existing
+12 frozen scientific-file hash checks remain separate.
+
 ## Research Archive
 
 The software and associated materials are archived on Zenodo.
