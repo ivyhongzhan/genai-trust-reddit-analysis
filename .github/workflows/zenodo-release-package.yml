@@ -25,6 +25,18 @@ jobs:
         run: python3 scripts/build_zenodo_release.py
       - name: Independently verify ZIP inventory and checksums
         run: python3 scripts/build_zenodo_release.py --verify genai-trust-reddit-analysis_release-candidate.zip
+      - name: Record source revision and downloadable archive checksum
+        run: |
+          echo "Source commit: $GITHUB_SHA"
+          sha256sum genai-trust-reddit-analysis_release-candidate.zip
+          {
+            echo "### Verified Zenodo release candidate"
+            echo "Source commit: \`$GITHUB_SHA\`"
+            echo "Archive SHA-256:"
+            echo "\`\`\`"
+            sha256sum genai-trust-reddit-analysis_release-candidate.zip
+            echo "\`\`\`"
+          } >> "$GITHUB_STEP_SUMMARY"
       - name: Upload checked release candidate for manual Zenodo deposit
         uses: actions/upload-artifact@v4
         with:
