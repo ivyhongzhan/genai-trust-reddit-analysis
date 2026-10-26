@@ -1,4 +1,4 @@
-name: Build Zenodo release candidate
+name: Build verified Zenodo release candidate
 
 on:
   workflow_dispatch:
@@ -17,59 +17,18 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - name: Verify preserved outputs and tests
+      - name: Verify preserved scientific outputs and tests
         run: |
           python3 scripts/verify_package.py
           python3 -m unittest discover -s tests -v
-      - name: Build versioned archive candidate
-        shell: bash
-        run: |
-          python3 - <<'PY'
-          from pathlib import Path
-          import zipfile
-
-          root = Path(".")
-          output = Path("genai-trust-reddit-analysis_v3-license-update-candidate.zip")
-          prefix = "genai-trust-reddit-analysis/"
-          metadata = """# Zenodo v3 license-update release candidate
-
-          This is a packaging candidate, not a Zenodo publication. The
-          version-specific DOI must be assigned by Zenodo upon publishing.
-          The concept DOI is https://doi.org/10.5281/zenodo.23653961.
-
-          Creators/Authors: Hong Zhan
-          ORCID: https://orcid.org/0009-0002-1862-0913
-          Resource type: Software
-          Keywords: generative AI; trust and distrust; Reddit; computational social science; human-AI interaction; secondary analysis
-          Licenses: MIT (original code, scripts/ and tests/); CC BY 4.0 (original documentation and figures only).
-          Excluded from license grants: results/, provenance/, upstream data, third-party material and anything not explicitly covered by LICENSE-SCOPE.md.
-          Source DOI: https://doi.org/10.5281/zenodo.20331918
-          Prior version DOI: https://doi.org/10.5281/zenodo.23655847
-
-          Contents reproduce the curated public GitHub source snapshot.
-          No raw Reddit records or private manuscript files are included.
-          """
-          files = [
-              p for p in root.rglob("*") if p.is_file()
-              and not any(t in {".git", ".github", ".pytest_cache", "__pycache__", "_site"} for t in p.parts)
-              and p != output
-          ]
-          with zipfile.ZipFile(output, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as zf:
-              for path in sorted(files):
-                  arcname = prefix + path.as_posix()
-                  if path.as_posix() == "CITATION.cff":
-                      cf = path.read_text(encoding="utf-8")
-                      cf = cf.replace('version: "v2"', 'version: "v3"')
-                      cf = cf.replace('doi: "10.5281/zenodo.23655847"', 'doi: "10.5281/zenodo.23653961"')
-                      cf = cf.replace('url: "https://doi.org/10.5281/zenodo.23655847"', 'url: "https://doi.org/10.5281/zenodo.23653961"')
-                      zf.writestr(arcname, cf)
-                  else:
-                      zf.write(path, arcname)
-              zf.writestr(prefix + "ZENODO_VERSION_README.md", metadata)
-          print("Created", output, "files", len(files) + 1, "bytes", output.stat().st_size)
-          PY
-      - uses: actions/upload-artifact@v4
+      - name: Build repository snapshot with complete SHA-256 inventory
+        run: python3 scripts/build_zenodo_release.py
+      - name: Independently verify ZIP inventory and checksums
+        run: python3 scripts/build_zenodo_release.py --verify genai-trust-reddit-analysis_release-candidate.zip
+      - name: Upload checked release candidate for manual Zenodo deposit
+        uses: actions/upload-artifact@v4
         with:
-          name: zenodo-v3-license-update-candidate
-          path: genai-trust-reddit-analysis_v3-license-update-candidate.zip
+          name: zenodo-verified-release-candidate
+          path: genai-trust-reddit-analysis_release-candidate.zip
+          if-no-files-found: error
           retention-days: 30
