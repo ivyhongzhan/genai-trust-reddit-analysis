@@ -127,7 +127,13 @@ Pessianzadeh et al. (2026). *In Generative AI We (Dis)Trust? Computational Analy
 
 [Source Publication](https://doi.org/10.1162/TACL.a.744) · [Source Dataset](https://doi.org/10.5281/zenodo.20331918)
 
-The original study and this secondary analysis have distinct research questions, analytical specifications, and reporting scopes.
+This secondary analysis has a different reporting and interpretation emphasis from the source study:
+
+1. **Context-stratified reporting:** It presents pooled, community-specific, and UTC half-year-level descriptive distributions together, including explicit reporting of coverage and sparse or unavailable cells.
+2. **Measurement transparency:** It documents separate archive denominators, record eligibility and exception rules, and the uniform-field replacement estimand used for the dimensions analysis. The replacement does not reconstruct or validate the source study's original mixed-field procedure.
+3. **Interpretive scope:** It emphasizes context-preserving interpretation of released computational labels and dimensions, without treating sample-archive proportions as population-level measures of individuals' trust.
+
+These points describe the scope of the present secondary analysis; they are not claims that the source study omitted all such analyses.
 
 Record-level Reddit-derived data are not redistributed in this repository.
 
@@ -135,9 +141,13 @@ Record-level Reddit-derived data are not redistributed in this repository.
 
 To cite the research artifacts, use the [Zenodo archival record](https://doi.org/10.5281/zenodo.23655847) or the repository's [citation metadata](CITATION.cff).
 
-Copyright © 2026 Hong Zhan. All rights reserved for the author's original materials.
+**Original analysis and verification code:** [MIT License](LICENSE).
 
-Public availability does not grant a general license to reproduce, modify, or redistribute the repository contents. Third-party materials remain subject to their respective licensing and rights conditions. See [LICENSE](LICENSE).
+**Original documentation and author-created research figures:** [Creative Commons Attribution 4.0 International (CC BY 4.0)](LICENSE-CC-BY-4.0.md).
+
+Third-party datasets and materials remain subject to their own terms. Derived result tables, provenance records, and other files not expressly covered by these grants are not automatically relicensed. For exact file coverage and attribution, see [License Scope](LICENSE-SCOPE.md).
+
+The existing [Zenodo v2 archive](https://doi.org/10.5281/zenodo.23655847) retains its separately recorded All Rights Reserved status; this repository update does not change permissions on that archived version.
 
 ---
 
