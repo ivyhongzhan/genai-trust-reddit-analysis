@@ -89,7 +89,7 @@ python3 -m unittest discover -s tests -v
 
 The verification script checks 12 frozen file hashes, selected reported statistics, and temporal reporting boundaries.
 
-**Reproduction scope:** These commands verify distributed artifacts and numerical consistency. A complete independent analysis from record-level data to the final manuscript requires additional inputs and processing steps not distributed here.
+**Reproduction scope:** These commands verify distributed artifacts and numerical consistency. A complete raw-data-to-paper rerun was not established. An independent analysis from record-level data to the final manuscript requires additional inputs and processing steps not distributed here.
 
 See the [Reproduction Guide](reproduce.md) for technical requirements and the documented scope of verification.
 
