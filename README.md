@@ -133,9 +133,8 @@ This secondary analysis has a different reporting and interpretation emphasis fr
 2. **Measurement transparency:** It documents separate archive denominators, record eligibility and exception rules, and the uniform-field replacement estimand used for the dimensions analysis. The replacement does not reconstruct or validate the source study's original mixed-field procedure.
 3. **Interpretive scope:** It emphasizes context-preserving interpretation of released computational labels and dimensions, without treating sample-archive proportions as population-level measures of individuals' trust.
 
-These points describe the scope of the present secondary analysis; they are not claims that the source study omitted all such analyses.
-
-Record-level Reddit-derived data are not redistributed in this repository.
+> 💡 **Note on Secondary Analysis & Data Ethics:**  
+> This secondary analysis clarifies scope rather than claiming omissions by the source study. In compliance with data protection and platform terms, record-level Reddit-derived data are not redistributed here.
 
 ## Citation and Rights
 
