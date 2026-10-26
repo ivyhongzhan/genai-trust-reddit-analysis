@@ -1,39 +1,67 @@
-# Reproduction and verification
+# Reproduction and Verification
 
-## Reproduce the packaged artifact checks
+This repository provides preserved analysis scripts, frozen aggregate outputs, research figures, provenance documentation, and automated verification tools.
 
-Run these commands from the repository root:
+## Quick Verification
+
+Run the following commands from the repository root.
+
+**1. Verify the research artifacts**
 
 ```bash
 python3 scripts/verify_package.py
+```
+
+**2. Run the included tests**
+
+```bash
 python3 -m unittest discover -s tests -v
 ```
 
-The verifier checks 12 frozen file hashes, selected numerator and denominator values, community percentages, temporal coverage, and the presence of an accurate disclosure of reproduction limits. This operation verifies packaged outputs; it does **not** execute the source study from its raw inputs.
+The verifier checks:
 
-## Confirmed local rerun, October 25, 2026
+- SHA-256 integrity of 12 frozen files.
+- Selected classification and dimension counts.
+- Reported proportions and denominator consistency.
+- Temporal coverage and reporting boundaries.
 
-Separate audits in the preserved local research project established the following:
+The included verification scripts use Python's standard library.
 
-| Source stage | Reproduction status |
-| --- | --- |
-| Day 14 | Three direct frozen inputs and two analytic JSONL files present with matching SHA-256 |
-| Day 15 | All four output files match exactly |
-| Day 16 | All numerical tables and raster figures match; PDF/SVG normalized content and rendered pixels are identical, despite nondeterministic timestamp and SVG IDs |
-| Day 17 | All seven output hashes match, but historical QC remains `BLOCKED` |
-| Day 18 | Seven of eight output files match exactly; the only difference is a run specific provenance `run_id` |
-| Day 20 | Not rerun because the original script writes to an occupied frozen output directory |
+## Analysis Scripts
 
-The Day 16 audit found no scientific difference. Original frozen materials were not overwritten. A complete raw-data-to-paper rerun was not established.
+| Script | Purpose |
+|---|---|
+| `scripts/run_day15_rq1_counts.py` | Descriptive classification and dimension summaries |
+| `scripts/run_day18_rq2_community.py` | Community-stratified analysis |
+| `scripts/verify_package.py` | Frozen artifact integrity and numerical verification |
 
-## Data availability and boundaries
+The preserved analysis scripts require corresponding verified frozen inputs and configuration records. These record-level inputs are not distributed in this repository.
 
-The three direct Day 14 inputs and two frozen analytical JSONL inputs have been verified **in the local source project**, but they are not included in this GitHub repository. The original `tacl_data.zip` file in that project was an HTML 404 response, not the authoritative frozen data. See [data availability](data/README.md).
+## Research Outputs
 
-The preserved Day 15 and Day 18 scripts require verified frozen JSONL files and freeze records at user supplied paths. Do not substitute unrelated extracts or introduce the later author supplied Mixtral data into this frozen analysis.
+The repository includes:
 
-Several subsequent output manifests document projected or reference only checks, not a newly executed analysis. Missing generating code or input files must remain marked unverified rather than inferred from the existing outputs.
+- `results/` — frozen aggregate statistics and supporting analytical tables.
+- `figures/` — research figures and temporal visualizations.
+- `provenance/` — methodological decisions, data freezes, denominator rules, and verification records.
+- `tests/` — automated verification tests.
 
-## Submitted manuscript identity
+## Reproduction Scope
 
-The source package records a SHA-256 for a candidate submission PDF, but the exact ScholarOne uploaded file has not been independently established. This repository does not claim that its candidate PDF is the submitted file, and does not include a manuscript PDF.
+The distributed package supports verification of selected numerical results, preserved analytical outputs, and file integrity.
+
+Separate local verification established consistency across major analytical stages, including descriptive tables and research visualizations.
+
+A complete independent rerun from the original record-level inputs to the final manuscript requires additional source files and processing steps not distributed here.
+
+Detailed verification evidence, including the scope of completed and incomplete reruns, is retained in the [reproduction addendum](provenance/20261025_reproduction_addendum.md).
+
+Passing GitHub Actions indicates successful execution of the included verification tests; it does not establish complete end-to-end reproduction.
+
+## Research Archive
+
+The software and associated materials are archived on Zenodo.
+
+**[Research Artifacts — Version v2](https://doi.org/10.5281/zenodo.23655847)**
+
+[All-version DOI](https://doi.org/10.5281/zenodo.23653961)

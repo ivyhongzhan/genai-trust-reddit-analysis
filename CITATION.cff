@@ -1,14 +1,25 @@
 cff-version: 1.2.0
-message: "If you use these research artifacts, please cite this software and the original dataset as appropriate."
+
+message: "Please cite the archived research artifacts using the Zenodo DOI."
+
+type: software
+
 authors:
   - family-names: Zhan
     given-names: Hong
     orcid: "https://orcid.org/0009-0002-1862-0913"
-title: "Beyond the Aggregate: Research Artifacts"
-type: software
+
+title: "Research Artifacts for Beyond the Aggregate: Trust and Distrust in Generative AI Across Technical Reddit Communities and Time"
+
 version: "v2"
-identifiers:
-  - type: doi
-    value: "10.5281/zenodo.23655847"
-abstract: "Research artifacts for a descriptive, archive-separated secondary analysis of generative AI trust and distrust discourse across five technical Reddit communities."
-url: "https://github.com/ivyhongzhan/genai-trust-reddit-analysis"
+date-released: "2026-10-26"
+
+doi: "10.5281/zenodo.23655847"
+
+abstract: >-
+  Software and supporting research artifacts for a descriptive,
+  archive-separated secondary analysis of generative AI trust and
+  distrust across five technical Reddit communities.
+
+repository-code: "https://github.com/ivyhongzhan/genai-trust-reddit-analysis"
+url: "https://doi.org/10.5281/zenodo.23655847"
