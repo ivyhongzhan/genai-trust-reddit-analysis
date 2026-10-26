@@ -1,0 +1,50 @@
+name: Prepare license-aligned Zenodo package
+
+on:
+  push:
+    paths:
+      - ".github/workflows/package-zenodo.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Verify archived scientific outputs
+        run: |
+          python3 scripts/verify_package.py
+          python3 -m unittest discover -s tests -v
+      - name: Bundle repository with explicit license scope
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile, ZIP_DEFLATED
+          root = Path.cwd()
+          out = root / "zenodo-v3-research-artifacts.zip"
+          required = ("LICENSE", "LICENSE-CC-BY-4.0.md", "LICENSE-SCOPE.md", "CITATION.cff")
+          for name in required:
+              if not (root / name).is_file():
+                  raise SystemExit(f"Missing required release metadata: {name}")
+          with ZipFile(out, "w", compression=ZIP_DEFLATED, compresslevel=8) as archive:
+              for p in sorted(root.rglob("*")):
+                  if p == out or not p.is_file():
+                      continue
+                  relative = p.relative_to(root)
+                  if ".git" in relative.parts or "__pycache__" in relative.parts:
+                      continue
+                  archive.write(p, "genai-trust-reddit-analysis-v3/" + str(relative))
+          print("Prepared archive:", out.name, out.stat().st_size, "bytes")
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: zenodo-v3-candidate
+          path: zenodo-v3-research-artifacts.zip
+          retention-days: 14
+          if-no-files-found: error
