@@ -2,13 +2,13 @@
 
 **Trust and Distrust in Generative AI Across Technical Reddit Communities and Time**
 
-Hong Zhan | Research Artifacts | 2026
+Hong Zhan | Research artifacts | 2026
 
-*Manuscript submitted to PACM HCI (CSCW Rolling Quantitative). *
+*Associated manuscript submitted to PACM HCI (CSCW Rolling, Quantitative Track); currently under review. It has not been accepted or published.*
 
 [![Research artifact verification](https://github.com/ivyhongzhan/genai-trust-reddit-analysis/actions/workflows/verify.yml/badge.svg)](https://github.com/ivyhongzhan/genai-trust-reddit-analysis/actions/workflows/verify.yml)
 
-[Research Figure](figures/rq1_figure.pdf) · [Reproduction Guide](reproduce.md) · [Original Dataset](https://doi.org/10.5281/zenodo.20331918)
+[Research Figure](figures/rq1_figure.pdf) · [Reproduction Guide](reproduce.md) · [Research artifact series (Zenodo)](https://doi.org/10.5281/zenodo.23653961) · [Version v2 (Zenodo)](https://doi.org/10.5281/zenodo.23655847) · [Original dataset](https://doi.org/10.5281/zenodo.20331918)
 
 ## TL;DR
 
@@ -28,7 +28,7 @@ Hong Zhan | Research Artifacts | 2026
 
 The following steps verify the **packaged frozen artifacts**. They do not constitute a full raw data to manuscript rerun.
 
-**1. Clone with authorized GitHub access.** This repository is private.
+**1. Clone the repository.**
 
 ```bash
 git clone https://github.com/ivyhongzhan/genai-trust-reddit-analysis.git
@@ -89,7 +89,7 @@ This study reuses research data released by Pessianzadeh and colleagues. It exam
 
 The classification archive retains one record without a valid classification label. The dimensions archive contains 13 indicators that can cooccur within a record. The primary temporal window spans 2023 H1 through 2025 H1, with December 2022 retained as partial coverage context only.
 
-The original source dataset is available at [Zenodo record 20331918](https://doi.org/10.5281/zenodo.20331918). This is the **source dataset**, not a preprint of the present study. No public SSRN preprint has been verified yet.
+The original source dataset is available at [Zenodo record 20331918](https://doi.org/10.5281/zenodo.20331918). This is the **source dataset**, not a preprint of the present study. The manuscript PDF is not linked here; no public SSRN full-text URL is asserted.
 
 All three direct Day 14 inputs and both frozen analytic files were recovered in the preserved local research project, and their recorded SHA256 digests matched. Record level inputs, Reddit post text, user information, and private correspondence are not redistributed here. See [Data Availability](data/README.md).
 
@@ -148,11 +148,13 @@ The precise commands, inputs, and outstanding issues are explained in [Reproduct
 
 **Reuse permissions.** Source data and derived materials have distinct rights and access considerations. The current repository grants no general reuse license pending review of the applicable conditions.
 
-## Citation & Contact
+## Research artifacts and citation
 
-**Submitted manuscript**
+The software and associated research artifacts are available as **Zenodo version v2** ([version DOI](https://doi.org/10.5281/zenodo.23655847)); the [concept DOI](https://doi.org/10.5281/zenodo.23653961) resolves to the version series. The Zenodo record identifies the resource as Software and lists **All Rights Reserved**. Public access permits reading and downloading the deposited files; it does not grant an open-source license or permission to reuse code or data. This repository likewise grants no general reuse license; see [LICENSE](LICENSE).
 
-Zhan, H. (2026). *Beyond the Aggregate: Trust and Distrust in Generative AI Across Technical Reddit Communities and Time*. Manuscript submitted for peer review.
+**Associated manuscript (not a publication)**
+
+Zhan, H. (2026). *Beyond the Aggregate: Trust and Distrust in Generative AI Across Technical Reddit Communities and Time*. Submitted to PACM HCI (CSCW Rolling, Quantitative Track); under review. Not accepted or published.
 
 **Source study and dataset**
 
@@ -160,10 +162,8 @@ Pessianzadeh et al. (2026). *In Generative AI We (Dis)Trust? Computational Analy
 
 [Source publication](https://doi.org/10.1162/TACL.a.744) · [Source dataset](https://doi.org/10.5281/zenodo.20331918)
 
-Software citation metadata are in [CITATION.cff](CITATION.cff). An SSRN preprint link will be added only after an actual public preprint is verified.
+Software citation metadata are in [CITATION.cff](CITATION.cff). No SSRN full-text link is included because public access to the submitted PDF has not been confirmed.
 
 **Hong Zhan**
 
 [Academic website](https://ivyhongzhan.github.io/Ivyhongzhan/) · [GitHub profile](https://github.com/ivyhongzhan) · [ORCID](https://orcid.org/0009-0002-1862-0913)
-
-Email: [hz2030@alumni.york.ac.uk](mailto:hz2030@alumni.york.ac.uk)

@@ -6,5 +6,9 @@ authors:
     orcid: "https://orcid.org/0009-0002-1862-0913"
 title: "Beyond the Aggregate: Research Artifacts"
 type: software
+version: "v2"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.23655847"
 abstract: "Research artifacts for a descriptive, archive-separated secondary analysis of generative AI trust and distrust discourse across five technical Reddit communities."
 url: "https://github.com/ivyhongzhan/genai-trust-reddit-analysis"
