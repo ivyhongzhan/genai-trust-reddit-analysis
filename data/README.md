@@ -42,4 +42,4 @@ The present analysis uses its own archive-separated specifications, estimands, d
 
 See [Reproduction and Verification](../reproduce.md) for available scripts, verification commands, required inputs, and execution boundaries.
 
-The associated research artifacts are archived separately under [Hong Zhan's Zenodo record](https://doi.org/10.5281/zenodo.23655847).
+The associated research artifacts are archived separately under [Hong Zhan's Zenodo record](https://doi.org/10.5281/zenodo.23666151).
