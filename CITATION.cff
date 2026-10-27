@@ -11,10 +11,10 @@ authors:
 
 title: "Research Artifacts for Beyond the Aggregate: Trust and Distrust in Generative AI Across Technical Reddit Communities and Time"
 
-version: "v2"
+version: "v3"
 date-released: "2026-10-26"
 
-doi: "10.5281/zenodo.23655847"
+doi: "10.5281/zenodo.23666151"
 
 abstract: >-
   Software and supporting research artifacts for a descriptive,
@@ -22,4 +22,4 @@ abstract: >-
   distrust across five technical Reddit communities.
 
 repository-code: "https://github.com/ivyhongzhan/genai-trust-reddit-analysis"
-url: "https://doi.org/10.5281/zenodo.23655847"
+url: "https://doi.org/10.5281/zenodo.23666151"
