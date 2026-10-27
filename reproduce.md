@@ -83,6 +83,6 @@ reproduction of the research from record-level source data. The existing
 
 The software and associated materials are archived on Zenodo.
 
-**[Research Artifacts — Version v2](https://doi.org/10.5281/zenodo.23655847)**
+**[Research Artifacts — Version v3](https://doi.org/10.5281/zenodo.23666151)**
 
 [All-version DOI](https://doi.org/10.5281/zenodo.23653961)
