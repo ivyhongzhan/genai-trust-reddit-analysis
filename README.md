@@ -6,7 +6,7 @@ _Manuscript under review_
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23653961.svg)](https://doi.org/10.5281/zenodo.23653961)
 [![Research Artifact Verification](https://github.com/ivyhongzhan/genai-trust-reddit-analysis/actions/workflows/verify.yml/badge.svg)](https://github.com/ivyhongzhan/genai-trust-reddit-analysis/actions/workflows/verify.yml)
 
-**[Research Artifacts (Zenodo)](https://doi.org/10.5281/zenodo.23655847)** · [Research Figures](figures/) · [Results](results/) · [Reproduction Guide](reproduce.md)
+**[Research Artifacts (Zenodo)](https://doi.org/10.5281/zenodo.23666151)** · [Research Figures](figures/) · [Results](results/) · [Reproduction Guide](reproduce.md)
 
 ## Overview
 
@@ -113,9 +113,9 @@ See the [Reproduction Guide](reproduce.md) for technical requirements and the do
 
 The software and supporting research materials are archived on Zenodo.
 
-**[Access Research Artifacts — Zenodo v2](https://doi.org/10.5281/zenodo.23655847)**
+**[Access Research Artifacts — Zenodo v3](https://doi.org/10.5281/zenodo.23666151)**
 
-- **Version DOI:** [10.5281/zenodo.23655847](https://doi.org/10.5281/zenodo.23655847)
+- **Version DOI:** [10.5281/zenodo.23666151](https://doi.org/10.5281/zenodo.23666151)
 - **All-version DOI:** [10.5281/zenodo.23653961](https://doi.org/10.5281/zenodo.23653961)
 - **Resource type:** Software
 - **Access:** Open
@@ -141,7 +141,7 @@ This secondary analysis has a different reporting and interpretation emphasis fr
 
 ## Citation and Rights
 
-To cite the research artifacts, use the [Zenodo archival record](https://doi.org/10.5281/zenodo.23655847) or the repository's [citation metadata](CITATION.cff).
+To cite the research artifacts, use the [Zenodo archival record](https://doi.org/10.5281/zenodo.23666151) or the repository's [citation metadata](CITATION.cff).
 
 **Original analysis and verification code:** [MIT License](LICENSE).
 
@@ -149,5 +149,5 @@ To cite the research artifacts, use the [Zenodo archival record](https://doi.org
 
 Third-party datasets and materials remain subject to their own terms. Derived result tables, provenance records, and other files not expressly covered by these grants are not automatically relicensed. For exact file coverage and attribution, see [License Scope](LICENSE-SCOPE.md).
 
-The existing [Zenodo v2 archive](https://doi.org/10.5281/zenodo.23655847) retains its separately recorded All Rights Reserved status; this repository update does not change permissions on that archived version.
+Previously published [Zenodo v2](https://doi.org/10.5281/zenodo.23655847) and [Zenodo v3](https://doi.org/10.5281/zenodo.23666151) retain their separately recorded rights statements; the file-level grants in this repository do not retroactively modify those archived releases.
 
