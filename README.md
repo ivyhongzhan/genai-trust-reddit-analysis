@@ -1,6 +1,7 @@
 # Beyond the Aggregate: Trust and Distrust in Generative AI Across Technical Reddit Communities and Time
 
-**Hong Zhan** | Research Code & Artifacts | 2026
+**Sole-author research · 2026**  
+_Manuscript under review_
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23653961.svg)](https://doi.org/10.5281/zenodo.23653961)
 [![Research Artifact Verification](https://github.com/ivyhongzhan/genai-trust-reddit-analysis/actions/workflows/verify.yml/badge.svg)](https://github.com/ivyhongzhan/genai-trust-reddit-analysis/actions/workflows/verify.yml)
@@ -30,6 +31,8 @@ Within the separate dimensions archive, Competence (70.6%), Reliability (49.4%),
 **3. Community and temporal stratification preserve information that pooled summaries cannot display.**
 
 Distributions and data availability vary across sampled communities and half-year periods. Reporting these strata makes the composition and coverage of aggregate results explicit without attributing the observed differences to causal mechanisms.
+
+This research contributes to a broader agenda on how trust in AI is measured and interpreted across social contexts.
 
 ## Research Visualizations
 
@@ -148,8 +151,3 @@ Third-party datasets and materials remain subject to their own terms. Derived re
 
 The existing [Zenodo v2 archive](https://doi.org/10.5281/zenodo.23655847) retains its separately recorded All Rights Reserved status; this repository update does not change permissions on that archived version.
 
----
-
-**Hong Zhan**
-
-[Academic Website](https://ivyhongzhan.github.io/Ivyhongzhan/) · [ORCID](https://orcid.org/0009-0002-1862-0913) · [GitHub](https://github.com/ivyhongzhan)
