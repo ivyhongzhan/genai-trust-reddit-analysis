@@ -45,7 +45,7 @@ These two licenses do not automatically apply to:
 - `environment.yml`, `.github/`, or other third-party/dependency content.
 - Original source datasets, record-level Reddit text, third-party analysis
   artifacts, and any externally sourced files.
-- The already-published Zenodo v1/v2 ZIP packages: these existing archived
+- The already-published Zenodo v1/v2/v3 ZIP packages: these existing archived
   versions retain their stated rights. A repository change is not a silent
   retroactive edit of a separately deposited archival release.
 
@@ -58,7 +58,7 @@ Rights not explicitly granted remain with their respective rights holders.
 
 Zhan, Hong (2026). *Research Artifacts for Beyond the Aggregate: Trust and
 Distrust in Generative AI Across Technical Reddit Communities and Time*.
-Zenodo. https://doi.org/10.5281/zenodo.23655847
+Zenodo. https://doi.org/10.5281/zenodo.23666151
 
-That citation identifies the archived v2 release; its own license statement
+That citation identifies the archived v3 release; its own license statement
 remains separate from the grants on this current GitHub version.
