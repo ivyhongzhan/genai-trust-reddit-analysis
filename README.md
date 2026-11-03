@@ -1,12 +1,12 @@
 # Beyond the Aggregate: Trust and Distrust in Generative AI Across Technical Reddit Communities and Time
 
 **Sole-author research · 2026**  
-_Manuscript submitted to PACM HCI (CSCW)_
+_Manuscript under review at PACM HCI (CSCW)_
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23653961.svg)](https://doi.org/10.5281/zenodo.23653961)
 [![Research Artifact Verification](https://github.com/ivyhongzhan/genai-trust-reddit-analysis/actions/workflows/verify.yml/badge.svg)](https://github.com/ivyhongzhan/genai-trust-reddit-analysis/actions/workflows/verify.yml)
 
-**[Research Artifacts (Zenodo)](https://doi.org/10.5281/zenodo.23666151)** · [Research Figures](figures/) · [Results](results/) · [Reproduction Guide](reproduce.md)
+[SSRN Preprint](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7671698) · **[Research Artifacts (Zenodo)](https://doi.org/10.5281/zenodo.23666151)** · [Research Figures](figures/) · [Results](results/) · [Reproduction Guide](reproduce.md)
 
 ## Overview
 
