@@ -9,5 +9,7 @@ dependencies:
   - python=3.9
   - numpy=2.0.2
   - matplotlib-base=3.9.4
-  - pymupdf=1.26.5
   - pillow=11.3.0
+  - pip
+  - pip:
+      - PyMuPDF==1.26.5
