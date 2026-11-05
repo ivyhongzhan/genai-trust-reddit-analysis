@@ -6,7 +6,7 @@ _Manuscript under review at PACM HCI (CSCW)_
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23653961.svg)](https://doi.org/10.5281/zenodo.23653961)
 [![Research Artifact Verification](https://github.com/ivyhongzhan/genai-trust-reddit-analysis/actions/workflows/verify.yml/badge.svg)](https://github.com/ivyhongzhan/genai-trust-reddit-analysis/actions/workflows/verify.yml)
 
-[SSRN Preprint](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7671698) · **[Research Artifacts (Zenodo)](https://doi.org/10.5281/zenodo.23666151)** · [Research Figures](figures/) · [Results](results/) · [Reproduction Guide](reproduce.md)
+[SSRN Preprint](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7671698) · **[Research Artifacts (Zenodo)](https://doi.org/10.5281/zenodo.23666151)** · [Research Figures](figures/) · [Results](results/) · **[Public Reproduction Guide](docs/PUBLIC_REPRODUCTION.md)**
 
 ## Overview
 
@@ -40,7 +40,7 @@ This research contributes to a broader agenda on how trust in AI is measured and
 
 **Figure 1.** Pooled and community-specific distributions of released trust/distrust classifications and dimension indicators across five technical Reddit communities. The two panels use separate analytical archives and denominators.
 
-[Full-resolution Figure 1 (PDF)](figures/rq1_figure.pdf) · [Temporal Classification Profiles](figures/classification_temporal_visualization.pdf) · [Temporal Dimension Profiles](figures/dimensions_temporal_visualization.pdf)
+**[High-resolution Figure 1 (320 dpi PDF)](figures/rq1_figure_300dpi.pdf)** · [Historical frozen Figure 1 (PDF)](figures/rq1_figure.pdf) · [Temporal Classification Profiles](figures/classification_temporal_visualization.pdf) · [Temporal Dimension Profiles](figures/dimensions_temporal_visualization.pdf)
 
 ## Data and Methods
 
@@ -94,7 +94,9 @@ The verification script checks 12 frozen file hashes, selected reported statisti
 
 **Reproduction scope:** The quick checks above do not run record-level analysis; a complete raw-data-to-paper rerun was not established by those quick checks. The [public ZIP-to-results workflow](docs/PUBLIC_REPRODUCTION.md) rebuilds major numerical results and three main figure layouts from the two public source ZIPs, with hash and figure QA comparisons. It does not reproduce the complete manuscript, establish the uploaded submission PDF, or resolve the original Day 17 blocked gate and unavailable Day 24 supporting-figure code. Historical frozen figures remain unchanged; a separate [300 dpi Figure 1](figures/rq1_figure_300dpi.pdf) is provided.
 
-See the [Reproduction Guide](reproduce.md) for technical requirements and the documented scope of verification.
+A documented clean-checkout reproduction from the two public source ZIPs passed **68/68 specified checks** for major numeric outputs and three main figure layouts. This is not a claim of complete manuscript or historical-gate reproduction; see the [public acceptance audit](docs/PUBLIC_REPRODUCTION_AUDIT_20261105.md) and [detailed reproduction guide](docs/PUBLIC_REPRODUCTION.md).
+
+See the [general reproduction notes](reproduce.md) for additional boundaries and release-package details.
 
 ## Repository Structure
 
