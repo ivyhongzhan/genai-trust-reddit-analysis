@@ -4,7 +4,7 @@
 
 This branch provides two **separate** reproducibility routes:
 
-1. **Day 14 record-level inputs → RQ1 and community-level RQ2.** The wrapper executes the preserved Day 15 and Day 18 scripts and compares every row and column of three regenerated CSV outputs to the existing frozen snapshots. It does not use the committed aggregate results as analysis input.
+1. **Day 14 record-level inputs → RQ1 and community-level RQ2.** The wrapper executes the preserved Day 15 and Day 18 scripts and compares every row and column of three regenerated CSV outputs to the existing frozen snapshots; it also recalculates the revised-manuscript descriptive association from newly regenerated community counts and compares it against the frozen count-based reference. It does not use the committed aggregate results as analysis input.
 2. **Frozen community counts → revised-manuscript descriptive association.** A standalone Python script recalculates Cramer's V, the descriptive chi-square quantity, and Trust-minus-Neither percentage-point contrasts. This step starts from published aggregate counts, not record-level data.
 
 All calculations remain archive-separated. No label recoding, source data edits, new sampling, inferential testing, cross-archive join, or changes to the reported manuscript numbers are introduced.
@@ -33,7 +33,7 @@ The script refuses to overwrite its output folder and rejects incorrect input ha
 - new-reproduction-run/day18/
 - new-reproduction-run/reproduction_report.json
 
-The report identifies any cell mismatch and does not claim end-to-end raw-data-to-paper reproduction. Because frozen inputs are not present on GitHub, a successful public GitHub Actions run cannot establish that these record-level commands have been run.
+The report includes the descriptive association recomputed from Day 18 output and identifies any cell mismatch and does not claim end-to-end raw-data-to-paper reproduction. Because frozen inputs are not present on GitHub, a successful public GitHub Actions run cannot establish that these record-level commands have been run.
 
 ## Reproduce revised-manuscript descriptive association
 
