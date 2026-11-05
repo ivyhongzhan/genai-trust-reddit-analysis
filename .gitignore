@@ -1,4 +1,39 @@
+# Python and local environments
 __pycache__/
 *.py[cod]
 .venv/
+venv/
+.env
+.env.*
 .DS_Store
+
+# Source archives and record-level intermediates: never commit
+*.zip
+*.jsonl
+/data/raw/
+/data/private/
+/raw/
+/private/
+/input/
+/inputs/
+/download/
+/downloads/
+
+# Generated runs and private audit evidence
+/outputs/
+/runs/
+/run/
+/reproduction_runs/
+/audit_evidence/
+/evidence_private/
+/logs/
+*.log
+*.log.*
+*.trace
+*.pid
+
+# Local scratch files and sensitive reports (publish redacted evidence explicitly)
+/tmp/
+/temp/
+/scratch/
+/.cache/
