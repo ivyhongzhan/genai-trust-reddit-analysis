@@ -43,6 +43,12 @@ class AssociationTests(unittest.TestCase):
             self.assertAlmostEqual(actual["cramers_v"], 0.07335374468450037)
             self.assertAlmostEqual(actual["trust_minus_neither_percentage_points"]["programming"], 7.407407407407407)
 
+    def test_committed_frozen_community_counts(self):
+        published = calculate(ROOT / "results/final_community_table_source.csv")
+        self.assertEqual(published["n"], 8519)
+        self.assertAlmostEqual(published["chi_square_descriptive"], 137.5163864065677)
+        self.assertAlmostEqual(published["cramers_v"], 0.07335374468450037)
+
     def test_missing_cell_is_not_silently_ignored(self):
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / "bad.csv"
