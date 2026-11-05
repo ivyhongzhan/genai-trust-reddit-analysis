@@ -14,6 +14,7 @@ import subprocess
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
+from reproduce_posthoc_association import calculate as association_from_community_table
 
 ROOT = Path(__file__).resolve().parents[1]
 RESULTS = {
@@ -111,14 +112,28 @@ def main() -> int:
     checks = {}
     for name, (derived, reference, keys) in RESULTS.items():
         checks[name] = compare_csv(args.output_dir / derived, ROOT / reference, keys)
-    success = all(check["match"] for check in checks.values())
+    computed_association = association_from_community_table(args.output_dir / "day18/community_descriptive_summary.csv")
+    frozen_association = association_from_community_table(ROOT / "results/final_community_table_source.csv")
+    association_matches = (
+        computed_association["n"] == frozen_association["n"]
+        and math.isclose(computed_association["chi_square_descriptive"], frozen_association["chi_square_descriptive"], abs_tol=1e-12)
+        and math.isclose(computed_association["cramers_v"], frozen_association["cramers_v"], abs_tol=1e-12)
+        and all(math.isclose(computed_association["trust_minus_neither_percentage_points"][key], val, abs_tol=1e-12)
+                for key, val in frozen_association["trust_minus_neither_percentage_points"].items())
+    )
+    success = all(check["match"] for check in checks.values()) and association_matches
     report = {
         "status": "PASS" if success else "FAIL",
         "scope": "Day 14 frozen record-level JSONL to Day 15 RQ1 and Day 18 community summaries only",
         "not_proven": ["original Zenodo source to Day 14 preprocessing", "Day 20 temporal summaries",
-                       "RQ3 outputs", "figure regeneration", "full raw-data-to-paper reproduction"],
+                       "RQ3 temporal/context outputs", "figure regeneration", "full raw-data-to-paper reproduction"],
         "verified_input_sha256": input_hashes,
         "comparison": checks,
+        "association_from_regenerated_community_counts": {
+            "match": association_matches,
+            "computed": computed_association,
+            "reference": frozen_association,
+        },
         "generated_utc": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
     }
     with (args.output_dir / "reproduction_report.json").open("x", encoding="utf-8") as handle:
