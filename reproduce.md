@@ -52,7 +52,7 @@ The distributed package supports verification of selected numerical results, pre
 
 Separate local verification established consistency across major analytical stages, including descriptive tables and research visualizations.
 
-A complete independent rerun from the original record-level inputs to the final manuscript requires additional source files and processing steps not distributed here.
+The [public ZIP-to-results workflow](docs/PUBLIC_REPRODUCTION.md) rebuilds the main numerical sources and figure layouts using the publicly released ZIPs and declared dependencies. It checks recorded manuscript fractions, but does not reproduce the entire manuscript or establish the exact uploaded submission PDF. Day 17 remains historically BLOCKED and the original Day 24 supporting-figure rendering code remains unavailable.
 
 Detailed verification evidence, including the scope of completed and incomplete reruns, is retained in the [reproduction addendum](provenance/20261025_reproduction_addendum.md).
 

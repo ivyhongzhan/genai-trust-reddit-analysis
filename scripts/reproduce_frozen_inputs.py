@@ -37,10 +37,12 @@ def keyed_csv(path: Path, key_fields: tuple) -> tuple:
     with path.open(newline="", encoding="utf-8") as handle:
         reader = csv.DictReader(handle)
         columns = reader.fieldnames
-        if not columns or not set(key_fields) <= set(columns):
+        if not columns or len(columns) != len(set(columns)) or not set(key_fields) <= set(columns):
             raise ValueError(f"missing columns in {path}")
         rows = {}
         for row in reader:
+            if None in row or any(value is None for value in row.values()):
+                raise ValueError(f"malformed CSV row in {path}")
             key = tuple(row[field] for field in key_fields)
             if key in rows:
                 raise ValueError(f"duplicate CSV key {key} in {path}")
@@ -60,9 +62,9 @@ def compare_csv(actual: Path, frozen: Path, keys: tuple) -> dict:
             continue
         for field in sorted(set(rows_a[key]) & set(rows_f[key])):
             lhs, rhs = rows_a[key][field], rows_f[key][field]
-            if field in FLOAT_FIELDS:
+            if field in FLOAT_FIELDS and not (lhs == rhs == ""):
                 try:
-                    ok = math.isclose(float(lhs), float(rhs), rel_tol=0, abs_tol=1e-12)
+                    ok = math.isfinite(float(lhs)) and math.isfinite(float(rhs)) and math.isclose(float(lhs), float(rhs), rel_tol=0, abs_tol=1e-12)
                 except (ValueError, TypeError):
                     ok = False
             else:

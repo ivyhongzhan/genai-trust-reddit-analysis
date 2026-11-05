@@ -1,0 +1,285 @@
+{
+  "source": "20 literal fraction occurrences identified in the 2026-11-05 revised-manuscript private audit; comparison targets only; not the manuscript source.",
+  "claims": [
+    {
+      "source": "main.tex",
+      "line": 29,
+      "numerator": 3506,
+      "denominator": 4964,
+      "percentage": "70.6",
+      "matching_cells": [
+        [
+          "dimensions",
+          "ALL",
+          "Competence"
+        ]
+      ]
+    },
+    {
+      "source": "content.tex",
+      "line": 117,
+      "numerator": 3555,
+      "denominator": 8519,
+      "percentage": "41.7",
+      "matching_cells": [
+        [
+          "classification",
+          "ALL",
+          "Neither"
+        ]
+      ]
+    },
+    {
+      "source": "content.tex",
+      "line": 117,
+      "numerator": 3408,
+      "denominator": 8519,
+      "percentage": "40.0",
+      "matching_cells": [
+        [
+          "classification",
+          "ALL",
+          "Trust"
+        ]
+      ]
+    },
+    {
+      "source": "content.tex",
+      "line": 117,
+      "numerator": 1427,
+      "denominator": 8519,
+      "percentage": "16.8",
+      "matching_cells": [
+        [
+          "classification",
+          "ALL",
+          "Distrust"
+        ]
+      ]
+    },
+    {
+      "source": "content.tex",
+      "line": 117,
+      "numerator": 129,
+      "denominator": 8519,
+      "percentage": "1.5",
+      "matching_cells": [
+        [
+          "classification",
+          "ALL",
+          "Both"
+        ]
+      ]
+    },
+    {
+      "source": "content.tex",
+      "line": 119,
+      "numerator": 3506,
+      "denominator": 4964,
+      "percentage": "70.6",
+      "matching_cells": [
+        [
+          "dimensions",
+          "ALL",
+          "Competence"
+        ]
+      ]
+    },
+    {
+      "source": "content.tex",
+      "line": 119,
+      "numerator": 2452,
+      "denominator": 4964,
+      "percentage": "49.4",
+      "matching_cells": [
+        [
+          "dimensions",
+          "ALL",
+          "Reliability"
+        ]
+      ]
+    },
+    {
+      "source": "content.tex",
+      "line": 119,
+      "numerator": 2243,
+      "denominator": 4964,
+      "percentage": "45.2",
+      "matching_cells": [
+        [
+          "dimensions",
+          "ALL",
+          "Familiarity"
+        ]
+      ]
+    },
+    {
+      "source": "content.tex",
+      "line": 138,
+      "numerator": 3408,
+      "denominator": 8519,
+      "percentage": "40.0",
+      "matching_cells": [
+        [
+          "classification",
+          "ALL",
+          "Trust"
+        ]
+      ]
+    },
+    {
+      "source": "content.tex",
+      "line": 138,
+      "numerator": 2300,
+      "denominator": 5332,
+      "percentage": "43.1",
+      "matching_cells": [
+        [
+          "classification",
+          "ChatGPTCoding",
+          "Trust"
+        ]
+      ]
+    },
+    {
+      "source": "content.tex",
+      "line": 138,
+      "numerator": 87,
+      "denominator": 285,
+      "percentage": "30.5",
+      "matching_cells": [
+        [
+          "classification",
+          "compsci",
+          "Trust"
+        ]
+      ]
+    },
+    {
+      "source": "content.tex",
+      "line": 138,
+      "numerator": 3555,
+      "denominator": 8519,
+      "percentage": "41.7",
+      "matching_cells": [
+        [
+          "classification",
+          "ALL",
+          "Neither"
+        ]
+      ]
+    },
+    {
+      "source": "content.tex",
+      "line": 138,
+      "numerator": 2011,
+      "denominator": 5332,
+      "percentage": "37.7",
+      "matching_cells": [
+        [
+          "classification",
+          "ChatGPTCoding",
+          "Neither"
+        ]
+      ]
+    },
+    {
+      "source": "content.tex",
+      "line": 138,
+      "numerator": 151,
+      "denominator": 285,
+      "percentage": "53.0",
+      "matching_cells": [
+        [
+          "classification",
+          "compsci",
+          "Neither"
+        ]
+      ]
+    },
+    {
+      "source": "content.tex",
+      "line": 140,
+      "numerator": 3506,
+      "denominator": 4964,
+      "percentage": "70.6",
+      "matching_cells": [
+        [
+          "dimensions",
+          "ALL",
+          "Competence"
+        ]
+      ]
+    },
+    {
+      "source": "content.tex",
+      "line": 140,
+      "numerator": 712,
+      "denominator": 4964,
+      "percentage": "14.3",
+      "matching_cells": [
+        [
+          "dimensions",
+          "ALL",
+          "Transparency"
+        ]
+      ]
+    },
+    {
+      "source": "content.tex",
+      "line": 140,
+      "numerator": 239,
+      "denominator": 314,
+      "percentage": null,
+      "matching_cells": [
+        [
+          "dimensions",
+          "programming",
+          "Competence"
+        ]
+      ]
+    },
+    {
+      "source": "content.tex",
+      "line": 140,
+      "numerator": 82,
+      "denominator": 314,
+      "percentage": null,
+      "matching_cells": [
+        [
+          "dimensions",
+          "programming",
+          "Transparency"
+        ]
+      ]
+    },
+    {
+      "source": "content.tex",
+      "line": 140,
+      "numerator": 136,
+      "denominator": 198,
+      "percentage": null,
+      "matching_cells": [
+        [
+          "dimensions",
+          "GitHub",
+          "Competence"
+        ]
+      ]
+    },
+    {
+      "source": "content.tex",
+      "line": 140,
+      "numerator": 52,
+      "denominator": 198,
+      "percentage": null,
+      "matching_cells": [
+        [
+          "dimensions",
+          "GitHub",
+          "Transparency"
+        ]
+      ]
+    }
+  ]
+}

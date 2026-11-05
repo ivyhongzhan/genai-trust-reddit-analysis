@@ -26,7 +26,7 @@ author-created portions of:
 - `reproduce.md`
 - `data/README.md`
 - `LICENSE-SCOPE.md`
-- `figures/rq1_figure.pdf`, `figures/rq1_figure.png`, and `figures/rq1_figure.webp`
+- `figures/rq1_figure.pdf`, `figures/rq1_figure_300dpi.pdf`, `figures/rq1_figure.png`, and `figures/rq1_figure.webp`
 - `figures/classification_temporal_visualization.pdf`
 - `figures/dimensions_temporal_visualization.pdf`
 
@@ -34,6 +34,10 @@ Underlying third-party data, labels, or other source material in such figures
 retain their original rights; this license covers only the author's own
 copyrightable contribution to their presentation. Factual counts and
 percentages are not claimed as exclusively owned by the author.
+
+## Third-party figure QA tools
+
+The files in `vendor/nature_figure_qa/` retain their upstream Apache-2.0 license and attribution; see [NOTICE](vendor/nature_figure_qa/NOTICE.md). They are excluded from the MIT grant above.
 
 ## Other materials and version boundaries
 

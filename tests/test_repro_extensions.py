@@ -1,6 +1,7 @@
 """Unit tests for independently computed descriptive results and CSV comparator."""
 import csv
 import sys
+import subprocess
 import tempfile
 import unittest
 from pathlib import Path
@@ -58,6 +59,30 @@ class AssociationTests(unittest.TestCase):
 
 
 class ComparisonTests(unittest.TestCase):
+    def test_unavailable_is_preserved_and_not_zero(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            a, b = Path(tmp) / "new.csv", Path(tmp) / "frozen.csv"
+            a.write_text("archive,scope,category,count,proportion\ndimensions,A,Competence,0,\n")
+            b.write_text(a.read_text())
+            self.assertTrue(compare_csv(a, b, ("archive", "scope", "category"))["match"])
+            b.write_text("archive,scope,category,count,proportion\ndimensions,A,Competence,0,0.0\n")
+            self.assertFalse(compare_csv(a, b, ("archive", "scope", "category"))["match"])
+
+    def test_malformed_and_nonfinite_values_fail_closed(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            a, b = Path(tmp) / "new.csv", Path(tmp) / "frozen.csv"
+            b.write_text("archive,scope,category,proportion\nclassification,A,Trust,0.4\n")
+            for text in ["archive,scope,category,proportion\nclassification,A,Trust\n",
+                         "archive,scope,category,proportion,proportion\nclassification,A,Trust,0.4,0.4\n",
+                         "archive,scope,category,proportion\nclassification,A,Trust,0.4,extra\n"]:
+                a.write_text(text)
+                with self.assertRaises(ValueError):
+                    compare_csv(a, b, ("archive", "scope", "category"))
+            for value in ["inf", "nan", "-inf"]:
+                a.write_text("archive,scope,category,proportion\nclassification,A,Trust," + value + "\n")
+                b.write_text(a.read_text())
+                self.assertFalse(compare_csv(a, b, ("archive", "scope", "category"))["match"])
+
     def test_row_order_and_float_precision(self):
         with tempfile.TemporaryDirectory() as tmp:
             a, b = Path(tmp) / "new.csv", Path(tmp) / "frozen.csv"
@@ -66,6 +91,39 @@ class ComparisonTests(unittest.TestCase):
             self.assertTrue(compare_csv(a, b, ("archive", "scope", "category"))["match"])
             b.write_text("archive,scope,category,count,proportion\nclassification,A,Neither,7,0.7\nclassification,A,Trust,4,0.3\n")
             self.assertFalse(compare_csv(a, b, ("archive", "scope", "category"))["match"])
+
+
+class InputSafetyTests(unittest.TestCase):
+    def test_wrong_frozen_hash_rejected_before_output_creation(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp = Path(tmp)
+            classification = tmp / "classification_analytic_frozen.jsonl"
+            dimensions = tmp / "dimensions_analytic_frozen.jsonl"
+            classification.write_text("{}\n")
+            dimensions.write_text("{}\n")
+            output = tmp / "new-output"
+            result = subprocess.run([sys.executable, str(ROOT / "scripts/reproduce_frozen_inputs.py"),
+                "--classification", str(classification), "--dimensions", str(dimensions),
+                "--output-dir", str(output)], capture_output=True, text=True)
+            self.assertNotEqual(result.returncode, 0)
+            self.assertIn("SHA-256 mismatch", result.stderr)
+            self.assertFalse(output.exists())
+
+    def test_existing_output_is_never_overwritten(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp = Path(tmp)
+            output = tmp / "existing"
+            output.mkdir()
+            marker = output / "sentinel"
+            marker.write_bytes(b"preserve")
+            result = subprocess.run([sys.executable, str(ROOT / "scripts/reproduce_end_to_end.py"),
+                "--research-root", str(tmp / "inputs"), "--manuscript-root", str(tmp / "paper"),
+                "--figure-qa-scripts", str(tmp / "qa"), "--output-dir", str(output)],
+                capture_output=True, text=True)
+            self.assertNotEqual(result.returncode, 0)
+            self.assertIn("refusing overwrite", result.stderr)
+            self.assertEqual(marker.read_bytes(), b"preserve")
+            self.assertEqual(list(output.iterdir()), [marker])
 
 
 if __name__ == "__main__":

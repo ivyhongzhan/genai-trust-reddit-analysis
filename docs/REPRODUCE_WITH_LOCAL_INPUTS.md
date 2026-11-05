@@ -1,5 +1,9 @@
 # Record-level reproduction: verified subset and remaining gaps
 
+For the public ZIP-to-results route, see [PUBLIC_REPRODUCTION.md](PUBLIC_REPRODUCTION.md). This document describes the earlier narrower wrapper and its historical evidence.
+
+**2026-11-05 update:** The new [local ZIP-to-paper workflow](END_TO_END_LOCAL_RUN.md) extends the initial wrapper below. Its [dated audit](REPRODUCTION_AUDIT_20261105.md) records numerical and main-figure reproduction PASS, with strict overall FAIL for the retained historical export-quality check. The initial wrapper still has the narrower scope described here.
+
 ## What this adds
 
 This branch provides two **separate** reproducibility routes:
@@ -58,10 +62,10 @@ python3 scripts/verify_package.py
 
 The unit tests check the aggregate association calculation and comparison behavior, including deliberate malformed data. The existing CI checks frozen hashes and selected facts; it does not rerun research analyses on the original record-level inputs.
 
-## What remains to establish complete reproduction
+## Historical gaps at the initial wrapper baseline
 
 - Original released Zenodo archive → Day 14 filtered and parsed analytical JSONL, using the historically locked five-community eligibility, time, label, and dimension rules.
 - Independent rerun and numerical comparison of Day 20 temporal tables, RQ3, revised-manuscript association derived from regenerated counts, and all paper figures.
 - Reproduction report with environment, provenance, exact source inputs/hashes, command log, output checks and explicit PASS/FAIL per paper result.
 
-The original project reports that Day 14 frozen inputs existed locally and passed hash validation; no record-level data are added to this repository. There is currently no independently verified end-to-end rerun. Do not relabel GitHub Actions passing checks as proof of that stronger claim.
+The original project reports that Day 14 frozen inputs existed locally and passed hash validation; no record-level data are added to this repository. The initial wrapper alone did not establish an independent end-to-end rerun; consult the dated audit above for the extended local execution and its remaining limits. Do not relabel GitHub Actions passing checks as proof of that stronger claim.

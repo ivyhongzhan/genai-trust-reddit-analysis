@@ -1,0 +1,37 @@
+{
+  "description": "Hashes of aggregate outputs and revised manuscript figure renders verified in the 2026-11-05 private audit; no records. Hashes are comparison targets, not analysis inputs. Figure comparisons depend on software and fonts.",
+  "aggregate_outputs": {
+    "rq3/rq3_descriptive_table_source.csv": "7094dfa88567c659dd91d1915c8213df57926db8ca3432d2e8cc86a99373eca5",
+    "day17/denominator_sensitivity.csv": "eaf6435b9c3b0972cc3a7c474ee8b5b55e85b9ee3364fb95d6b7fff2eaad28b1",
+    "rq3/aggregate_classification_profile.csv": "635a40f661cb6af59cc4b2e9e721ab48b05579e89cbeda57872163881974b0aa",
+    "rq3/aggregate_dimensions_profile.csv": "1f7075ef6a57050065ca8649484bbf1035f77c89490b6a57d9cd2e78649d2070",
+    "rq3/community_classification_profiles.csv": "bab3b60c55146ab5485e96dffe3da5e2637825d00e1706630c27b07c031e6726",
+    "rq3/community_dimensions_profiles.csv": "d5fddda355412826d63dd0a640c6e50e633f7f1e1adac36ab1e3540edc762f59",
+    "rq3/temporal_classification_profiles.csv": "7ca7b80ed49959422c54619de5261256d5855207ab69537d4b41ceb3c1a7e15b",
+    "rq3/temporal_dimensions_profiles.csv": "35bcc654738cf27ff9da99d594efbc0ada119804b255e6f3f631a2da2514f1fa",
+    "rq3/classification_community_heterogeneity_summary.csv": "0d4486ae93f8492d3b5d58bd597998069eddb38b8ff2717bc99fb2e5de7e95c4",
+    "rq3/dimensions_community_heterogeneity_summary.csv": "e0e70b6689f0ba3600c71f6a81d37fa1af5e984568a3a99790202fcd2ce3377f",
+    "rq3/classification_aggregate_vs_community_figure_source.csv": "0d4486ae93f8492d3b5d58bd597998069eddb38b8ff2717bc99fb2e5de7e95c4",
+    "rq3/dimensions_aggregate_vs_community_figure_source.csv": "e0e70b6689f0ba3600c71f6a81d37fa1af5e984568a3a99790202fcd2ce3377f"
+  },
+  "paper_figure_render_144dpi": {
+    "figure1": {
+      "width": 908,
+      "height": 1060,
+      "sha256_pixels_144dpi": "18b86ca8365d42152c3cd7b7a286f9d6dcb167e4de10b440efb2cc4787c4af2f",
+      "reference_pdf_sha256": "51bf8d940db4cbf4adaaca5102c9bc94e8a7418c272f4b9d084d8cf43a37c7f3"
+    },
+    "figure2": {
+      "width": 778,
+      "height": 526,
+      "sha256_pixels_144dpi": "d9fc5d6c4f439337a52047afcc4ba2adcc17bde7e52ec3e17487529aeadd28ac",
+      "reference_pdf_sha256": "7c53340655834a2c3f1670bc10103e970d2c86c650e9f7ac2e4f2be2c086d118"
+    },
+    "figure3": {
+      "width": 778,
+      "height": 879,
+      "sha256_pixels_144dpi": "e1d002d2035b5911ac45f1460f68c622692bbe9d3340897105a3cb48261a708d",
+      "reference_pdf_sha256": "2d78033961ca5e98d4608ea210ed86a6907f4df4a03b9749c15e1bae372db9a7"
+    }
+  }
+}

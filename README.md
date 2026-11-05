@@ -92,7 +92,7 @@ python3 -m unittest discover -s tests -v
 
 The verification script checks 12 frozen file hashes, selected reported statistics, and temporal reporting boundaries.
 
-**Reproduction scope:** These commands verify distributed artifacts and numerical consistency. A complete raw-data-to-paper rerun was not established. An independent analysis from record-level data to the final manuscript requires additional inputs and processing steps not distributed here.
+**Reproduction scope:** The quick checks above do not run record-level analysis; a complete raw-data-to-paper rerun was not established by those quick checks. The [public ZIP-to-results workflow](docs/PUBLIC_REPRODUCTION.md) rebuilds major numerical results and three main figure layouts from the two public source ZIPs, with hash and figure QA comparisons. It does not reproduce the complete manuscript, establish the uploaded submission PDF, or resolve the original Day 17 blocked gate and unavailable Day 24 supporting-figure code. Historical frozen figures remain unchanged; a separate [300 dpi Figure 1](figures/rq1_figure_300dpi.pdf) is provided.
 
 See the [Reproduction Guide](reproduce.md) for technical requirements and the documented scope of verification.
 

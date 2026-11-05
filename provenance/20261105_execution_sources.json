@@ -1,0 +1,47 @@
+{
+  "baseline_branch_commit": "e7f841ff4d7b3d05fcdcab99cfc439ef58fac7bb",
+  "source_project": "CSCW_TACL_Research",
+  "scripts": {
+    "run_day11_encoding_qc.py": {
+      "original_sha256": "4bbf12ab2d9212b3d82110118716f644d2c826e5b6ddb6b8f0b002fdda21c06e",
+      "branch_sha256": "4bbf12ab2d9212b3d82110118716f644d2c826e5b6ddb6b8f0b002fdda21c06e",
+      "identical": true
+    },
+    "run_day14_freeze.py": {
+      "original_sha256": "754be54a9c901ac2e491b0d5e302cc2273b5f3b231c665206d1f951c2852caf4",
+      "branch_sha256": "a7e178c86c03f92246ee22cf035e35d24e569fa57deaa81f12b9c47654813796",
+      "identical": false
+    },
+    "run_day15_rq1_counts.py": {
+      "original_sha256": "d24197870b58b820ceb63be48f641e856d70b58003ad2360f2e6ed31be46428e",
+      "branch_sha256": "624ce0484ef08e102a54df6af4f1327f4b3e5a5f15e18d20c5ec52e4efd15ffe",
+      "identical": false
+    },
+    "run_day16_rq1_display.py": {
+      "original_sha256": "27b96994d91a5d85a7efc397953a6b64d5993cc17a9bbf487bf3a9ab0172af27",
+      "branch_sha256": "b37fa0f32a2c43686cd8d9987bebbcfe5d2e4f805a2d8651b7106c32c7ecc264",
+      "identical": false
+    },
+    "run_day17_sensitivities.py": {
+      "original_sha256": "a92335edd5a9f9580b93d50bc8e00a4b38ac837187caa0987cfff95c4df2bc49",
+      "branch_sha256": "a92335edd5a9f9580b93d50bc8e00a4b38ac837187caa0987cfff95c4df2bc49",
+      "identical": true
+    },
+    "run_day18_rq2_community.py": {
+      "original_sha256": "af00deb32bd12f03d21c4ebda4bed7be14132008dfaa2bd58200bc9d2ff240a3",
+      "branch_sha256": "3abae16796beccf41985e6567e855160c7f4bb038660717390fa808f6129efa0",
+      "identical": false
+    },
+    "run_day20_temporal.py": {
+      "original_sha256": "3ca30da14e7c2d01e00e6baa7185c4aa3feb0dcea7515f0b9ea2a7fab6169a0f",
+      "branch_sha256": "a117e26d11227e5441cb37ada34266ac07f21d04d038bd1b829b72bc317611a3",
+      "identical": false
+    }
+  },
+  "changes": {
+    "run_day16_rq1_display.py": "Restore the 7 x 7.48 inch canvas from original alignment QA and explicit 200 dpi historical vector heatmap embedding. Counts, color map, categories and denominators unchanged.",
+    "run_day20_temporal.py": "Parameterize input/output/research paths; preserve analytical logic and fail-on-QC behavior.",
+    "render_manuscript_temporal.py": "Reuse the preserved revised-manuscript readable_temporal.py; parameterize source/output/QA locations.",
+    "run_day14_freeze.py": "Remove one inherited trailing whitespace character only; executable logic unchanged."
+  }
+}
