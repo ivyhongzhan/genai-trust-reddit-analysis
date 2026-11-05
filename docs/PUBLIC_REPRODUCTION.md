@@ -73,6 +73,8 @@ QA tools and their upstream license are in `vendor/nature_figure_qa/`.
 retain execution and hash evidence. Any command or comparison failure yields a
 nonzero exit and leaves completed evidence in place. A PASS applies only to the
 listed checks and environment, not the whole manuscript or all research gates.
+The [2026-11-05 public acceptance audit](PUBLIC_REPRODUCTION_AUDIT_20261105.md) records the clean-checkout run and its limits.
+
 The older private-input workflow and its historical FAIL audit remain documented
 in [END_TO_END_LOCAL_RUN.md](END_TO_END_LOCAL_RUN.md) and
 [REPRODUCTION_AUDIT_20261105.md](REPRODUCTION_AUDIT_20261105.md).
