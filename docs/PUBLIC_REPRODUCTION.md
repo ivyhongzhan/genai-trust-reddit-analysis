@@ -1,6 +1,6 @@
 # verview & Reproducibility Standard
 
-This repository provides a standalone, fully deterministic pipeline to regenerate all manuscript tables, figures, and sensitivity checks directly from the public Zenodo archives.Scope & Environment Constraints:Zero LLM / API Dependency: Execution relies solely on standard Python packages; no local Codex runtime, LLM inference, or active API keys are required. Hermetic Execution: The workflow operates strictly on public aggregated datasets and does not access private record-level JSONL files or draft manuscript sources.
+This repository provides a standalone, fully deterministic pipeline to regenerate all manuscript tables, figures, and sensitivity checks directly from the public Zenodo archives.Scope & Environment Constraints:Zero LLM / API Dependency: Execution relies solely on standard Python packages;  Hermetic Execution: The workflow operates strictly on public aggregated datasets and does not access private record-level JSONL files or draft manuscript sources.
 
 ## Inputs and environment
 
