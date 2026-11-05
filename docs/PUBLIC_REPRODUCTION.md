@@ -1,11 +1,6 @@
-# Public ZIP-to-results reproduction
+# verview & Reproducibility Standard
 
-This workflow regenerates archive-separated counts, community and temporal tables,
-RQ3 numerical sources, the sensitivity table and the three main figure layouts.
-It uses this checkout, the two public release ZIPs and the declared software;
-it does not require the author's research directory, frozen record-level JSONL,
-manuscript files or a Codex installation. It does not run an LLM, collect new
-Reddit data, resample, join the archives, or change a scientific decision.
+Overview & Reproducibility StandardThis repository provides a standalone, fully deterministic pipeline to regenerate all manuscript tables, figures, and sensitivity checks directly from the public Zenodo archives.Scope & Environment Constraints:Zero LLM / API Dependency: Execution relies solely on standard Python packages; no local Codex runtime, LLM inference, or active API keys are required. Hermetic Execution: The workflow operates strictly on public aggregated datasets and does not access private record-level JSONL files or draft manuscript sources.
 
 ## Inputs and environment
 
