@@ -50,11 +50,9 @@ The repository includes:
 
 The distributed package supports verification of selected numerical results, preserved analytical outputs, and file integrity.
 
-Separate local verification established consistency across major analytical stages, including descriptive tables and research visualizations.
-
 The [public ZIP-to-results workflow](docs/PUBLIC_REPRODUCTION.md) rebuilds the main numerical sources and figure layouts using the publicly released ZIPs and declared dependencies. It checks recorded manuscript fractions, but does not reproduce the entire manuscript or establish the exact uploaded submission PDF. Day 17 remains historically BLOCKED and the original Day 24 supporting-figure rendering code remains unavailable.
 
-Detailed verification evidence, including the scope of completed and incomplete reruns, is retained in the [reproduction addendum](provenance/20261025_reproduction_addendum.md).
+The [dated public acceptance audit](docs/PUBLIC_REPRODUCTION_AUDIT_20261105.md) records the current workflow’s results and limits. The [October reproduction addendum](provenance/20261025_reproduction_addendum.md) retains the earlier local rerun record.
 
 Passing GitHub Actions indicates successful execution of the included verification tests; it does not establish complete end-to-end reproduction.
 

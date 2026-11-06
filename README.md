@@ -10,29 +10,17 @@ _Manuscript under review at PACM HCI (CSCW)_
 
 ## Overview
 
-**How do aggregate measures of trust and distrust in generative AI relate to the community-specific and temporal patterns underlying them?**
+**How do pooled classifications of trust and distrust in generative AI compare with patterns within individual Reddit communities and half-year periods?**
 
-This research examines computational classifications of trust and distrust across five technical Reddit communities through a descriptive secondary analysis of released research archives.
-
-The study compares pooled summaries with community- and time-stratified descriptions while preserving the measurement, denominator, provenance, and availability boundaries of the underlying records.
-
-Its central contribution is a context-preserving approach to reporting computational social-media measures: aggregate statistics become more interpretable when presented alongside the community and temporal distributions from which they are derived.
+I conducted a descriptive secondary analysis of data released by Pessianzadeh et al. (2026). I compared pooled summaries with community and half-year distributions, keeping the classification and dimensions archives separate.
 
 ## Key Findings
 
-**1. Aggregate patterns do not consistently represent individual communities.**
+- **The pooled leading label does not lead in every community.** *Neither* accounts for 41.7% of pooled classifications, while *Trust* leads in ChatGPTCoding (43.1%) and programming (46.2%).
+- **Several dimension indicators occur frequently.** In the separate dimensions archive, Competence appears in 70.6% of records, Reliability in 49.4%, and Familiarity in 45.2%. These indicators can co-occur within a record.
+- **Community and time views reveal differences in composition and coverage.** Pooled summaries alone do not show these distributions or sparse and unavailable half-years.
 
-*Neither* is the most frequent classification in the pooled archive (41.7%). However, *Trust* is the most frequent classification in ChatGPTCoding (43.1%) and programming (46.2%).
-
-**2. The released data capture multiple trust-related dimensions.**
-
-Within the separate dimensions archive, Competence (70.6%), Reliability (49.4%), and Familiarity (45.2%) are the most frequently observed indicators. These measures can co-occur within individual records.
-
-**3. Community and temporal stratification preserve information that pooled summaries cannot display.**
-
-Distributions and data availability vary across sampled communities and half-year periods. Reporting these strata makes the composition and coverage of aggregate results explicit without attributing the observed differences to causal mechanisms.
-
-This research contributes to a broader agenda on how trust in AI is measured and interpreted across social contexts.
+The findings support reporting pooled AI-trust discourse summaries alongside community and temporal views, with their measurement fields, denominators, data sources, and coverage limits.
 
 ## Research Visualizations
 
@@ -61,7 +49,7 @@ The study examines five technical Reddit communities:
 - Primary temporal comparison window: 2023-H1 to 2025-H1.
 - Explicit accounting for missing values, denominator eligibility, measurement provenance, and sparse or unavailable observations.
 
-The dimensions analysis uses a documented uniform-field replacement estimand because the publicly released material does not reproduce the source study's full mixed-field specification.
+The dimensions analysis uses the same released model-output field for every dimension: `Output_gpt-4.1-2025-04-14_few`. This documented replacement estimand differs from the source study's mixed-field specification, which could not be reconstructed from the public release.
 
 The analysis does not combine the two archives into a shared estimand or make causal, individual-level, or population-prevalence claims.
 
@@ -92,11 +80,13 @@ python3 -m unittest discover -s tests -v
 
 The verification script checks 12 frozen file hashes, selected reported statistics, and temporal reporting boundaries.
 
-**Reproduction scope:** The quick checks above do not run record-level analysis; a complete raw-data-to-paper rerun was not established by those quick checks. The [public ZIP-to-results workflow](docs/PUBLIC_REPRODUCTION.md) rebuilds major numerical results and three main figure layouts from the two public source ZIPs, with hash and figure QA comparisons. It does not reproduce the complete manuscript, establish the uploaded submission PDF, or resolve the original Day 17 blocked gate and unavailable Day 24 supporting-figure code. Historical frozen figures remain unchanged; a separate [300 dpi Figure 1](figures/rq1_figure_300dpi.pdf) is provided.
+The quick checks above verify packaged files and selected statistics; they do not run record-level analysis.
 
-A documented clean-checkout reproduction from the two public source ZIPs passed **68/68 specified checks** for major numeric outputs and three main figure layouts. This is not a claim of complete manuscript or historical-gate reproduction; see the [public acceptance audit](docs/PUBLIC_REPRODUCTION_AUDIT_20261105.md) and [detailed reproduction guide](docs/PUBLIC_REPRODUCTION.md).
+The [public workflow](docs/PUBLIC_REPRODUCTION.md) rebuilds the main numerical results and three principal figure layouts from the two public source ZIPs. A documented clean-checkout run passed **68 specified checks**. See the [dated acceptance audit](docs/PUBLIC_REPRODUCTION_AUDIT_20261105.md) for the executed environment and results.
 
-See the [general reproduction notes](reproduce.md) for additional boundaries and release-package details.
+A complete raw-data-to-paper rerun was not established. The workflow does not reproduce the complete manuscript or identify the exact uploaded submission PDF. The historical Day 17 gate remains **BLOCKED**, and the original Day 24 supporting-figure code remains unavailable. Historical frozen figures are unchanged; a separate [Figure 1 export with approximately 320 dpi embedded images](figures/rq1_figure_300dpi.pdf) is available.
+
+See [reproduce.md](reproduce.md) for additional workflows and release-package details.
 
 ## Repository Structure
 
@@ -132,14 +122,9 @@ Pessianzadeh et al. (2026). *In Generative AI We (Dis)Trust? Computational Analy
 
 [Source Publication](https://doi.org/10.1162/TACL.a.744) · [Source Dataset](https://doi.org/10.5281/zenodo.20331918)
 
-This secondary analysis has a different reporting and interpretation emphasis from the source study:
+This analysis compares pooled, community, and half-year distributions while documenting separate archive denominators, eligibility rules, and the replacement dimension field. It does not reconstruct or validate the source study's mixed-field procedure. The proportions describe released discourse records, not population-level measures of individuals' trust.
 
-1. **Context-stratified reporting:** It presents pooled, community-specific, and UTC half-year-level descriptive distributions together, including explicit reporting of coverage and sparse or unavailable cells.
-2. **Measurement transparency:** It documents separate archive denominators, record eligibility and exception rules, and the uniform-field replacement estimand used for the dimensions analysis. The replacement does not reconstruct or validate the source study's original mixed-field procedure.
-3. **Interpretive scope:** It emphasizes context-preserving interpretation of released computational labels and dimensions, without treating sample-archive proportions as population-level measures of individuals' trust.
-
-> 💡 **Note on Secondary Analysis & Data Ethics:**  
-> This secondary analysis clarifies scope rather than claiming omissions by the source study. In compliance with data protection and platform terms, record-level Reddit-derived data are not redistributed here.
+Record-level Reddit-derived data are not redistributed here.
 
 ## Citation and Rights
 

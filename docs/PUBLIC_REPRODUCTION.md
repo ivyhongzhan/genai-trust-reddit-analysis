@@ -1,6 +1,8 @@
-# verview & Reproducibility Standard
+# Public reproduction: scope and instructions
 
-This repository provides a standalone, fully deterministic pipeline to regenerate all manuscript tables, figures, and sensitivity checks directly from the public Zenodo archives.Scope & Environment Constraints:Zero LLM / API Dependency: Execution relies solely on standard Python packages;  Hermetic Execution: The workflow operates strictly on public aggregated datasets and does not access private record-level JSONL files or draft manuscript sources.
+This workflow rebuilds the main numerical results and three principal figure layouts from two public Zenodo source archives. It uses Python packages without new LLM or Reddit API calls.
+
+The inputs contain **record-level data**. The workflow creates private JSON and JSONL intermediates outside the checkout; it does not require private manuscript sources. It checks specified outputs rather than reproducing the complete manuscript or every historical analysis. Exact figure pixels depend on the fonts, renderer, and platform.
 
 ## Inputs and environment
 

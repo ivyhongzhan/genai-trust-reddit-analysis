@@ -36,7 +36,7 @@ The underlying archives originate from research data released in connection with
 
 [Source Dataset](https://doi.org/10.5281/zenodo.20331918) · [Source Publication](https://doi.org/10.1162/TACL.a.744)
 
-The present analysis uses its own archive-separated specifications, estimands, denominator rules, and interpretation boundaries.
+The two archives are analyzed separately, each with its own measurement fields and eligible denominator. The results describe released discourse records.
 
 ## Reproduction
 
